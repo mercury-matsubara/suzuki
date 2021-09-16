@@ -1,0 +1,251 @@
+table.list,table.mail,table.label
+{
+	border: 2px #000000 solid;																								/* テーブル枠の設定 */
+	border-collapse: collapse;																								/* テーブル枠の隙間設定 */
+}
+a
+{
+	padding: 0px 4px;
+	font-family:"Palatino Linotype”";
+}
+table.list td.td2
+{
+	width: 60px;
+}
+
+table.list th
+{
+	background-color: #1E90FF;																								/* 背景色設定 */
+	border: 2px #000000 solid;																								/* テーブル枠の設定 */
+}
+
+
+table.list td
+{
+	border: 2px #000000 solid;																								/* テーブル枠の設定 */
+}
+
+table.list td#stripe
+{
+	background-color: #B0E0E6;																								/* 背景色設定 */
+}
+
+table.list td#emote
+{
+	background-color: #FFFF00;																								/* 背景色設定 */
+}
+
+table.mail th
+{
+	background-color: #1E90FF;																								/* 背景色設定 */
+	border: 2px #000000 solid;																								/* テーブル枠の設定 */
+}
+
+table.mail td
+{
+	border: 2px #000000 solid;																								/* テーブル枠の設定 */
+}
+
+table.mail td#stripe
+{
+	background-color: #B0E0E6;																								/* 背景色設定 */
+}
+
+table.mail td#emote
+{
+	background-color: #FFFF00;																								/* 背景色設定 */
+}
+
+table.label th
+{
+	background-color: #1E90FF;																								/* 背景色設定 */
+	border: 2px #000000 solid;																								/* テーブル枠の設定 */
+}
+
+table.label td
+{
+	border: 2px #000000 solid;																								/* テーブル枠の設定 */
+}
+
+table.label td#stripe
+{
+	background-color: #B0E0E6;																								/* 背景色設定 */
+}
+
+table.label td#emote
+{
+	background-color: #FFFF00;																								/* 背景色設定 */
+}
+
+td.center
+{
+	text-align: center;																										/* 背景色設定 */
+}
+td.right
+{
+	text-align: right;																										/* 背景色設定 */
+}
+td.left
+{
+	text-align: left;																										/* 背景色設定 */
+}
+td.top
+{
+	vertical-align:top;
+}
+table.mail_result td.radio
+{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+a.title {
+	color:#000;
+	padding:15px 17px;
+	font-size: xx-large;
+	font-weight: bold;
+	display: inline-block;
+	line-height: 100%;
+	overflow: hidden;
+	text-transform: uppercase;
+	margin-right: 15px;
+	border-radius: 50px;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+}
+
+a.large {
+	color:#000;
+	padding:15px 17px;
+	font-size: xx-large;
+	font-weight: bold;
+	display: inline-block;
+	line-height: 100%;
+	overflow: hidden;
+	text-transform: uppercase;
+	margin-right: 15px;
+	border-radius: 50px;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+}
+
+a.error {
+	color:#F00;
+	font-size: small;
+}
+
+.pad
+{
+	padding: 15px;
+}
+
+.readOnly
+{
+	background-color: #cccccc;
+}
+
+div.center
+{
+	text-align : center;
+}
+td,th
+{
+	white-space:nowrap;
+}
+
+td.year1
+{
+	background-color:#F0FFFF;
+	padding: 2px 10px;
+}
+td.year2
+{
+	background-color:#E0FFFF;
+	padding: 2px 10px;
+}
+td.year3
+{
+	background-color:#F0F8FF;
+	padding: 2px 10px;
+}
+td.year4
+{
+	background-color:#F8F8FF;
+	padding: 2px 10px;
+}
+td.year5
+{
+	background-color:#FFF0F5;
+	padding: 2px 10px;
+}
+td.year6
+{
+	background-color:#FFDAB9;
+	padding: 2px 10px;
+}
+a.kensakuyear
+{
+	color: #111111;
+}
+a.kensaku
+{
+	color: #111111;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+input[type="text"]:focus, textarea:focus {
+    background-color: #ffefd5;
+}
+
+input.free
+{
+	WIDTH: 140px;
+	HEIGHT: 40px;
+}
+input.readOnly:focus {
+    background-color: #DDDDDD;
+}
+input.readOnly {
+    background-color: #DDDDDD;
+}
+
+input.free:hover {
+	background-color: #FFDAB9;
+}
+input.button:hover {
+	background-color: #FFDAB9;
+}
+input.free:disabled {
+	background-color: #E6E6FA;
+}
+input.button:disabled {
+	background-color: #E6E6FA;
+}
+input[type="text"][disabled]:focus {
+    background-color: #E6E6FA;
+}
+
+input[type="submit"],input[type="button"]
+{
+	position: relative;
+	top: 50%;
+	display: inline-block;
+	padding: 0 .6em;
+	overflow: hidden;
+	height: 1.9em;
+	line-height: 1.9em;
+	white-space: nowrap;
+	cursor: pointer;
+}
+div.left
+{
+	float:left !important;
+	HEIGHT:30px;
+}
+div.right
+{
+	position: absolute;
+	float:left !important;
+	HEIGHT:30px;
+}

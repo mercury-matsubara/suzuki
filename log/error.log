@@ -1,0 +1,183 @@
+[20-Oct-2017 16:27:49 Asia/Tokyo] PHP Notice:  Undefined index:  in /home/users/1/main.jp-suzuki-sangyo/web/test/f_Button.php on line 171
+[20-Oct-2017 16:27:49 Asia/Tokyo] PHP Notice:  Undefined index:  in /home/users/1/main.jp-suzuki-sangyo/web/test/f_Button.php on line 171
+[20-Oct-2017 16:27:49 Asia/Tokyo] PHP Notice:  Undefined index:  in /home/users/1/main.jp-suzuki-sangyo/web/test/f_Button.php on line 171
+[20-Oct-2017 16:27:49 Asia/Tokyo] PHP Notice:  Undefined index:  in /home/users/1/main.jp-suzuki-sangyo/web/test/f_Button.php on line 171
+[20-Oct-2017 16:27:49 Asia/Tokyo] PHP Notice:  Undefined index:  in /home/users/1/main.jp-suzuki-sangyo/web/test/f_Button.php on line 171
+[20-Oct-2017 16:27:54 Asia/Tokyo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/users/1/main.jp-suzuki-sangyo/web/test/deleterireki.php:22) in /home/users/1/main.jp-suzuki-sangyo/web/test/deleterireki.php on line 97
+[20-Oct-2017 16:35:55 Asia/Tokyo] PHP Notice:  Undefined index:  in /home/users/1/main.jp-suzuki-sangyo/web/test/f_Button.php on line 171
+[20-Oct-2017 16:35:55 Asia/Tokyo] PHP Notice:  Undefined index:  in /home/users/1/main.jp-suzuki-sangyo/web/test/f_Button.php on line 171
+[20-Oct-2017 16:35:55 Asia/Tokyo] PHP Notice:  Undefined index:  in /home/users/1/main.jp-suzuki-sangyo/web/test/f_Button.php on line 171
+[20-Oct-2017 16:35:55 Asia/Tokyo] PHP Notice:  Undefined index:  in /home/users/1/main.jp-suzuki-sangyo/web/test/f_Button.php on line 171
+[20-Oct-2017 16:35:55 Asia/Tokyo] PHP Notice:  Undefined index:  in /home/users/1/main.jp-suzuki-sangyo/web/test/f_Button.php on line 171
+[20-Oct-2017 16:36:00 Asia/Tokyo] DELETE FROM nrireki WHERE SHUDATE < '2016-10-20 00:00:00' ;
+[20-Oct-2017 16:39:38 Asia/Tokyo] PHP Notice:  Undefined index:  in /home/users/1/main.jp-suzuki-sangyo/web/test/f_Button.php on line 171
+[20-Oct-2017 16:39:38 Asia/Tokyo] PHP Notice:  Undefined index:  in /home/users/1/main.jp-suzuki-sangyo/web/test/f_Button.php on line 171
+[20-Oct-2017 16:39:38 Asia/Tokyo] PHP Notice:  Undefined index:  in /home/users/1/main.jp-suzuki-sangyo/web/test/f_Button.php on line 171
+[20-Oct-2017 16:39:38 Asia/Tokyo] PHP Notice:  Undefined index:  in /home/users/1/main.jp-suzuki-sangyo/web/test/f_Button.php on line 171
+[20-Oct-2017 16:39:38 Asia/Tokyo] PHP Notice:  Undefined index:  in /home/users/1/main.jp-suzuki-sangyo/web/test/f_Button.php on line 171
+[20-Oct-2017 16:39:47 Asia/Tokyo] DELETE FROM nrireki WHERE SHUDATE < '2016-10-20 00:00:00' ;
+[27-Dec-2018 09:53:32 Asia/Tokyo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/users/1/main.jp-mercury-app/web/suzuki/login.php:60) in /home/users/1/main.jp-mercury-app/web/suzuki/login.php on line 79
+[27-Dec-2018 09:53:32 Asia/Tokyo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/users/1/main.jp-mercury-app/web/suzuki/login.php:60) in /home/users/1/main.jp-mercury-app/web/suzuki/login.php on line 80
+[27-Dec-2018 09:53:32 Asia/Tokyo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/users/1/main.jp-mercury-app/web/suzuki/login.php:60) in /home/users/1/main.jp-mercury-app/web/suzuki/login.php on line 81
+[27-Dec-2018 09:53:34 Asia/Tokyo] PHP Notice:  Undefined index: filenmae in /home/users/1/main.jp-mercury-app/web/suzuki/pageJump.php on line 17
+[27-Dec-2018 09:53:34 Asia/Tokyo] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/users/1/main.jp-mercury-app/web/suzuki/list.php:1) in /home/users/1/main.jp-mercury-app/web/suzuki/list.php on line 2
+[27-Dec-2018 09:53:34 Asia/Tokyo] PHP Notice:  Undefined index: select_num in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 1154
+[27-Dec-2018 09:53:34 Asia/Tokyo] PHP Notice:  Undefined variable: makeDatepicker in /home/users/1/main.jp-mercury-app/web/suzuki/list.php on line 299
+[27-Dec-2018 09:53:36 Asia/Tokyo] PHP Notice:  Undefined offset: 1 in /home/users/1/main.jp-mercury-app/web/suzuki/f_SQL.php on line 3697
+[27-Dec-2018 09:53:36 Asia/Tokyo] PHP Notice:  Undefined offset: 1 in /home/users/1/main.jp-mercury-app/web/suzuki/f_SQL.php on line 3691
+[27-Dec-2018 09:53:36 Asia/Tokyo] PHP Notice:  Undefined offset: 1 in /home/users/1/main.jp-mercury-app/web/suzuki/f_SQL.php on line 3691
+[27-Dec-2018 09:53:36 Asia/Tokyo] PHP Notice:  Undefined offset: 1 in /home/users/1/main.jp-mercury-app/web/suzuki/f_SQL.php on line 3691
+[27-Dec-2018 09:53:36 Asia/Tokyo] PHP Notice:  Undefined offset: 1 in /home/users/1/main.jp-mercury-app/web/suzuki/f_SQL.php on line 3691
+[27-Dec-2018 09:53:36 Asia/Tokyo] PHP Notice:  Undefined index: form_start_0 in /home/users/1/main.jp-mercury-app/web/suzuki/f_SQL.php on line 3749
+[27-Dec-2018 09:53:36 Asia/Tokyo] PHP Notice:  Undefined variable: filename in /home/users/1/main.jp-mercury-app/web/suzuki/f_DB.php on line 950
+[27-Dec-2018 09:53:36 Asia/Tokyo] PHP Notice:  Undefined index:  in /home/users/1/main.jp-mercury-app/web/suzuki/f_DB.php on line 950
+[27-Dec-2018 09:53:36 Asia/Tokyo] PHP Notice:  Undefined variable: filename in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 2208
+[27-Dec-2018 09:53:36 Asia/Tokyo] PHP Notice:  Undefined index:  in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 2208
+[27-Dec-2018 09:53:36 Asia/Tokyo] PHP Notice:  Undefined variable: makeDatepicker in /home/users/1/main.jp-mercury-app/web/suzuki/Modal.php on line 513
+[27-Dec-2018 09:53:36 Asia/Tokyo] PHP Notice:  Undefined variable: filename in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 2208
+[27-Dec-2018 09:53:36 Asia/Tokyo] PHP Notice:  Undefined index:  in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 2208
+[27-Dec-2018 09:53:36 Asia/Tokyo] PHP Warning:  A non-numeric value encountered in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 957
+[27-Dec-2018 09:53:36 Asia/Tokyo] PHP Notice:  Undefined variable: filename in /home/users/1/main.jp-mercury-app/web/suzuki/f_DB.php on line 879
+[27-Dec-2018 09:53:36 Asia/Tokyo] PHP Notice:  Undefined index:  in /home/users/1/main.jp-mercury-app/web/suzuki/f_DB.php on line 879
+[27-Dec-2018 09:53:36 Asia/Tokyo] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'S' at line 1
+[27-Dec-2018 09:53:36 Asia/Tokyo] PHP Notice:  Trying to get property of non-object in /home/users/1/main.jp-mercury-app/web/suzuki/f_DB.php on line 913
+[27-Dec-2018 09:53:40 Asia/Tokyo] PHP Notice:  Undefined index: post in /home/users/1/main.jp-mercury-app/web/suzuki/listJump.php on line 17
+[27-Dec-2018 09:53:40 Asia/Tokyo] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/users/1/main.jp-mercury-app/web/suzuki/list.php:1) in /home/users/1/main.jp-mercury-app/web/suzuki/list.php on line 2
+[27-Dec-2018 09:53:40 Asia/Tokyo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/users/1/main.jp-mercury-app/web/suzuki/list.php:1) in /home/users/1/main.jp-mercury-app/web/suzuki/f_Construct.php on line 6
+[27-Dec-2018 09:55:36 Asia/Tokyo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/users/1/main.jp-mercury-app/web/suzuki/login.php:60) in /home/users/1/main.jp-mercury-app/web/suzuki/login.php on line 79
+[27-Dec-2018 09:55:36 Asia/Tokyo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/users/1/main.jp-mercury-app/web/suzuki/login.php:60) in /home/users/1/main.jp-mercury-app/web/suzuki/login.php on line 80
+[27-Dec-2018 09:55:36 Asia/Tokyo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/users/1/main.jp-mercury-app/web/suzuki/login.php:60) in /home/users/1/main.jp-mercury-app/web/suzuki/login.php on line 81
+[27-Dec-2018 09:55:46 Asia/Tokyo] PHP Notice:  Undefined index: filenmae in /home/users/1/main.jp-mercury-app/web/suzuki/pageJump.php on line 17
+[27-Dec-2018 09:55:46 Asia/Tokyo] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/users/1/main.jp-mercury-app/web/suzuki/list.php:1) in /home/users/1/main.jp-mercury-app/web/suzuki/list.php on line 2
+[27-Dec-2018 09:55:46 Asia/Tokyo] PHP Notice:  Undefined index: select_num in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 1154
+[27-Dec-2018 09:55:46 Asia/Tokyo] PHP Notice:  Undefined variable: makeDatepicker in /home/users/1/main.jp-mercury-app/web/suzuki/list.php on line 299
+[27-Dec-2018 09:55:46 Asia/Tokyo] PHP Notice:  Undefined index: form_start_0 in /home/users/1/main.jp-mercury-app/web/suzuki/f_SQL.php on line 660
+[27-Dec-2018 09:55:53 Asia/Tokyo] PHP Notice:  Undefined index: post in /home/users/1/main.jp-mercury-app/web/suzuki/listJump.php on line 17
+[27-Dec-2018 09:55:53 Asia/Tokyo] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/users/1/main.jp-mercury-app/web/suzuki/list.php:1) in /home/users/1/main.jp-mercury-app/web/suzuki/list.php on line 2
+[27-Dec-2018 09:55:53 Asia/Tokyo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/users/1/main.jp-mercury-app/web/suzuki/list.php:1) in /home/users/1/main.jp-mercury-app/web/suzuki/f_Construct.php on line 6
+[27-Dec-2018 09:56:45 Asia/Tokyo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/users/1/main.jp-mercury-app/web/suzuki/login.php:60) in /home/users/1/main.jp-mercury-app/web/suzuki/login.php on line 79
+[27-Dec-2018 09:56:45 Asia/Tokyo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/users/1/main.jp-mercury-app/web/suzuki/login.php:60) in /home/users/1/main.jp-mercury-app/web/suzuki/login.php on line 80
+[27-Dec-2018 09:56:45 Asia/Tokyo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/users/1/main.jp-mercury-app/web/suzuki/login.php:60) in /home/users/1/main.jp-mercury-app/web/suzuki/login.php on line 81
+[27-Dec-2018 09:56:47 Asia/Tokyo] PHP Notice:  Undefined index: filenmae in /home/users/1/main.jp-mercury-app/web/suzuki/pageJump.php on line 17
+[27-Dec-2018 09:56:47 Asia/Tokyo] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/users/1/main.jp-mercury-app/web/suzuki/list.php:1) in /home/users/1/main.jp-mercury-app/web/suzuki/list.php on line 2
+[27-Dec-2018 09:56:47 Asia/Tokyo] PHP Notice:  Undefined index: select_num in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 1154
+[27-Dec-2018 09:56:47 Asia/Tokyo] PHP Notice:  Undefined variable: makeDatepicker in /home/users/1/main.jp-mercury-app/web/suzuki/list.php on line 299
+[27-Dec-2018 09:56:49 Asia/Tokyo] PHP Notice:  Undefined offset: 1 in /home/users/1/main.jp-mercury-app/web/suzuki/f_SQL.php on line 3697
+[27-Dec-2018 09:56:49 Asia/Tokyo] PHP Notice:  Undefined offset: 1 in /home/users/1/main.jp-mercury-app/web/suzuki/f_SQL.php on line 3691
+[27-Dec-2018 09:56:49 Asia/Tokyo] PHP Notice:  Undefined offset: 1 in /home/users/1/main.jp-mercury-app/web/suzuki/f_SQL.php on line 3691
+[27-Dec-2018 09:56:49 Asia/Tokyo] PHP Notice:  Undefined offset: 1 in /home/users/1/main.jp-mercury-app/web/suzuki/f_SQL.php on line 3691
+[27-Dec-2018 09:56:49 Asia/Tokyo] PHP Notice:  Undefined offset: 1 in /home/users/1/main.jp-mercury-app/web/suzuki/f_SQL.php on line 3691
+[27-Dec-2018 09:56:49 Asia/Tokyo] PHP Notice:  Undefined index: form_start_0 in /home/users/1/main.jp-mercury-app/web/suzuki/f_SQL.php on line 3749
+[27-Dec-2018 09:56:49 Asia/Tokyo] PHP Notice:  Undefined variable: filename in /home/users/1/main.jp-mercury-app/web/suzuki/f_DB.php on line 950
+[27-Dec-2018 09:56:49 Asia/Tokyo] PHP Notice:  Undefined index:  in /home/users/1/main.jp-mercury-app/web/suzuki/f_DB.php on line 950
+[27-Dec-2018 09:56:49 Asia/Tokyo] PHP Notice:  Undefined variable: filename in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 2208
+[27-Dec-2018 09:56:49 Asia/Tokyo] PHP Notice:  Undefined index:  in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 2208
+[27-Dec-2018 09:56:49 Asia/Tokyo] PHP Notice:  Undefined variable: makeDatepicker in /home/users/1/main.jp-mercury-app/web/suzuki/Modal.php on line 513
+[27-Dec-2018 09:56:49 Asia/Tokyo] PHP Notice:  Undefined variable: filename in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 2208
+[27-Dec-2018 09:56:49 Asia/Tokyo] PHP Notice:  Undefined index:  in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 2208
+[27-Dec-2018 09:56:49 Asia/Tokyo] PHP Warning:  A non-numeric value encountered in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 957
+[27-Dec-2018 09:56:49 Asia/Tokyo] PHP Notice:  Undefined variable: filename in /home/users/1/main.jp-mercury-app/web/suzuki/f_DB.php on line 879
+[27-Dec-2018 09:56:49 Asia/Tokyo] PHP Notice:  Undefined index:  in /home/users/1/main.jp-mercury-app/web/suzuki/f_DB.php on line 879
+[27-Dec-2018 09:56:49 Asia/Tokyo] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'S' at line 1
+[27-Dec-2018 09:56:49 Asia/Tokyo] PHP Notice:  Trying to get property of non-object in /home/users/1/main.jp-mercury-app/web/suzuki/f_DB.php on line 913
+[27-Dec-2018 09:56:54 Asia/Tokyo] PHP Notice:  Undefined index: post in /home/users/1/main.jp-mercury-app/web/suzuki/listJump.php on line 17
+[27-Dec-2018 09:56:54 Asia/Tokyo] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/users/1/main.jp-mercury-app/web/suzuki/list.php:1) in /home/users/1/main.jp-mercury-app/web/suzuki/list.php on line 2
+[27-Dec-2018 09:56:54 Asia/Tokyo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/users/1/main.jp-mercury-app/web/suzuki/list.php:1) in /home/users/1/main.jp-mercury-app/web/suzuki/f_Construct.php on line 6
+[27-Dec-2018 09:57:34 Asia/Tokyo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/users/1/main.jp-mercury-app/web/suzuki/login.php:60) in /home/users/1/main.jp-mercury-app/web/suzuki/login.php on line 79
+[27-Dec-2018 09:57:34 Asia/Tokyo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/users/1/main.jp-mercury-app/web/suzuki/login.php:60) in /home/users/1/main.jp-mercury-app/web/suzuki/login.php on line 80
+[27-Dec-2018 09:57:34 Asia/Tokyo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/users/1/main.jp-mercury-app/web/suzuki/login.php:60) in /home/users/1/main.jp-mercury-app/web/suzuki/login.php on line 81
+[27-Dec-2018 09:57:38 Asia/Tokyo] PHP Notice:  Undefined index: filenmae in /home/users/1/main.jp-mercury-app/web/suzuki/pageJump.php on line 17
+[27-Dec-2018 09:57:38 Asia/Tokyo] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/users/1/main.jp-mercury-app/web/suzuki/list.php:1) in /home/users/1/main.jp-mercury-app/web/suzuki/list.php on line 2
+[27-Dec-2018 09:57:38 Asia/Tokyo] PHP Notice:  Undefined index: select_num in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 1154
+[27-Dec-2018 09:57:38 Asia/Tokyo] PHP Notice:  Undefined variable: makeDatepicker in /home/users/1/main.jp-mercury-app/web/suzuki/list.php on line 299
+[27-Dec-2018 09:57:38 Asia/Tokyo] PHP Notice:  Undefined variable: filename in /home/users/1/main.jp-mercury-app/web/suzuki/f_SQL.php on line 2228
+[27-Dec-2018 09:57:38 Asia/Tokyo] PHP Notice:  Undefined index:  in /home/users/1/main.jp-mercury-app/web/suzuki/f_SQL.php on line 2228
+[27-Dec-2018 09:57:38 Asia/Tokyo] PHP Notice:  Undefined index: form_start_0 in /home/users/1/main.jp-mercury-app/web/suzuki/f_SQL.php on line 2465
+[27-Dec-2018 09:57:40 Asia/Tokyo] PHP Notice:  Undefined variable: filename in /home/users/1/main.jp-mercury-app/web/suzuki/f_DB.php on line 5446
+[27-Dec-2018 09:57:40 Asia/Tokyo] PHP Notice:  Undefined index:  in /home/users/1/main.jp-mercury-app/web/suzuki/f_DB.php on line 5446
+[27-Dec-2018 09:57:40 Asia/Tokyo] PHP Notice:  Undefined variable: filename in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 2208
+[27-Dec-2018 09:57:40 Asia/Tokyo] PHP Notice:  Undefined index:  in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 2208
+[27-Dec-2018 09:57:40 Asia/Tokyo] PHP Notice:  Undefined variable: filename in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 2208
+[27-Dec-2018 09:57:40 Asia/Tokyo] PHP Notice:  Undefined index:  in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 2208
+[27-Dec-2018 09:57:43 Asia/Tokyo] PHP Notice:  Undefined index: post in /home/users/1/main.jp-mercury-app/web/suzuki/listJump.php on line 17
+[27-Dec-2018 09:57:43 Asia/Tokyo] PHP Notice:  Undefined index: form_807_0 in /home/users/1/main.jp-mercury-app/web/suzuki/listJump.php on line 165
+[27-Dec-2018 09:58:13 Asia/Tokyo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/users/1/main.jp-mercury-app/web/suzuki/login.php:60) in /home/users/1/main.jp-mercury-app/web/suzuki/login.php on line 79
+[27-Dec-2018 09:58:13 Asia/Tokyo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/users/1/main.jp-mercury-app/web/suzuki/login.php:60) in /home/users/1/main.jp-mercury-app/web/suzuki/login.php on line 80
+[27-Dec-2018 09:58:13 Asia/Tokyo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/users/1/main.jp-mercury-app/web/suzuki/login.php:60) in /home/users/1/main.jp-mercury-app/web/suzuki/login.php on line 81
+[27-Dec-2018 09:58:15 Asia/Tokyo] PHP Notice:  Undefined index: filenmae in /home/users/1/main.jp-mercury-app/web/suzuki/pageJump.php on line 17
+[27-Dec-2018 09:58:15 Asia/Tokyo] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/users/1/main.jp-mercury-app/web/suzuki/list.php:1) in /home/users/1/main.jp-mercury-app/web/suzuki/list.php on line 2
+[27-Dec-2018 09:58:15 Asia/Tokyo] PHP Notice:  Undefined index: select_num in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 1154
+[27-Dec-2018 09:58:15 Asia/Tokyo] PHP Notice:  Undefined index: select_num in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 1154
+[27-Dec-2018 09:58:15 Asia/Tokyo] PHP Notice:  Undefined index: select_num in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 1154
+[27-Dec-2018 09:58:15 Asia/Tokyo] PHP Notice:  Undefined index: select_num in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 1154
+[27-Dec-2018 09:58:15 Asia/Tokyo] PHP Notice:  Undefined variable: makeDatepicker in /home/users/1/main.jp-mercury-app/web/suzuki/list.php on line 299
+[27-Dec-2018 09:58:15 Asia/Tokyo] PHP Notice:  Undefined index: form_start_0 in /home/users/1/main.jp-mercury-app/web/suzuki/f_SQL.php on line 660
+[27-Dec-2018 09:58:19 Asia/Tokyo] PHP Notice:  Undefined index: post in /home/users/1/main.jp-mercury-app/web/suzuki/listJump.php on line 17
+[27-Dec-2018 09:58:19 Asia/Tokyo] PHP Notice:  Undefined index: list in /home/users/1/main.jp-mercury-app/web/suzuki/listJump.php on line 190
+[27-Dec-2018 09:58:19 Asia/Tokyo] PHP Notice:  Undefined index: limitstart in /home/users/1/main.jp-mercury-app/web/suzuki/listJump.php on line 190
+[27-Dec-2018 09:58:19 Asia/Tokyo] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/users/1/main.jp-mercury-app/web/suzuki/list.php:1) in /home/users/1/main.jp-mercury-app/web/suzuki/list.php on line 2
+[27-Dec-2018 09:58:19 Asia/Tokyo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/users/1/main.jp-mercury-app/web/suzuki/list.php:1) in /home/users/1/main.jp-mercury-app/web/suzuki/f_Construct.php on line 6
+[27-Dec-2018 09:58:37 Asia/Tokyo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/users/1/main.jp-mercury-app/web/suzuki/login.php:60) in /home/users/1/main.jp-mercury-app/web/suzuki/login.php on line 79
+[27-Dec-2018 09:58:37 Asia/Tokyo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/users/1/main.jp-mercury-app/web/suzuki/login.php:60) in /home/users/1/main.jp-mercury-app/web/suzuki/login.php on line 80
+[27-Dec-2018 09:58:37 Asia/Tokyo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/users/1/main.jp-mercury-app/web/suzuki/login.php:60) in /home/users/1/main.jp-mercury-app/web/suzuki/login.php on line 81
+[27-Dec-2018 09:58:41 Asia/Tokyo] PHP Notice:  Undefined index: filenmae in /home/users/1/main.jp-mercury-app/web/suzuki/pageJump.php on line 17
+[27-Dec-2018 09:58:41 Asia/Tokyo] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/users/1/main.jp-mercury-app/web/suzuki/list.php:1) in /home/users/1/main.jp-mercury-app/web/suzuki/list.php on line 2
+[27-Dec-2018 09:58:41 Asia/Tokyo] PHP Notice:  Undefined index: select_num in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 1154
+[27-Dec-2018 09:58:41 Asia/Tokyo] PHP Notice:  Undefined index: select_num in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 1154
+[27-Dec-2018 09:58:41 Asia/Tokyo] PHP Notice:  Undefined variable: makeDatepicker in /home/users/1/main.jp-mercury-app/web/suzuki/list.php on line 299
+[27-Dec-2018 09:58:41 Asia/Tokyo] PHP Notice:  Undefined index: form_start_0 in /home/users/1/main.jp-mercury-app/web/suzuki/f_SQL.php on line 660
+[27-Dec-2018 09:58:44 Asia/Tokyo] PHP Notice:  Undefined index: filenmae in /home/users/1/main.jp-mercury-app/web/suzuki/pageJump.php on line 17
+[27-Dec-2018 09:58:44 Asia/Tokyo] PHP Notice:  Undefined index: link_num in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 205
+[27-Dec-2018 09:58:44 Asia/Tokyo] PHP Notice:  Undefined index: link_num in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 205
+[27-Dec-2018 09:58:44 Asia/Tokyo] PHP Notice:  Undefined variable: makeDatepicker in /home/users/1/main.jp-mercury-app/web/suzuki/insert.php on line 984
+[27-Dec-2018 09:58:47 Asia/Tokyo] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/users/1/main.jp-mercury-app/web/suzuki/list.php:1) in /home/users/1/main.jp-mercury-app/web/suzuki/list.php on line 2
+[27-Dec-2018 09:58:47 Asia/Tokyo] PHP Notice:  Undefined index: select_num in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 1154
+[27-Dec-2018 09:58:47 Asia/Tokyo] PHP Notice:  Undefined index: select_num in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 1154
+[27-Dec-2018 09:58:47 Asia/Tokyo] PHP Notice:  Undefined variable: makeDatepicker in /home/users/1/main.jp-mercury-app/web/suzuki/list.php on line 299
+[27-Dec-2018 09:58:47 Asia/Tokyo] PHP Notice:  Undefined index: form_start_0 in /home/users/1/main.jp-mercury-app/web/suzuki/f_SQL.php on line 660
+[27-Dec-2018 09:58:48 Asia/Tokyo] PHP Notice:  Undefined index: filenmae in /home/users/1/main.jp-mercury-app/web/suzuki/pageJump.php on line 17
+[27-Dec-2018 09:58:51 Asia/Tokyo] PHP Notice:  Undefined index: filenmae in /home/users/1/main.jp-mercury-app/web/suzuki/pageJump.php on line 17
+[27-Dec-2018 09:58:52 Asia/Tokyo] PHP Notice:  Undefined index: filenmae in /home/users/1/main.jp-mercury-app/web/suzuki/pageJump.php on line 17
+[27-Dec-2018 09:58:55 Asia/Tokyo] PHP Notice:  Undefined index: filenmae in /home/users/1/main.jp-mercury-app/web/suzuki/pageJump.php on line 17
+[27-Dec-2018 09:58:57 Asia/Tokyo] PHP Notice:  Undefined index: filenmae in /home/users/1/main.jp-mercury-app/web/suzuki/pageJump.php on line 17
+[27-Dec-2018 09:58:57 Asia/Tokyo] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/users/1/main.jp-mercury-app/web/suzuki/list.php:1) in /home/users/1/main.jp-mercury-app/web/suzuki/list.php on line 2
+[27-Dec-2018 09:58:57 Asia/Tokyo] PHP Notice:  Undefined index: select_num in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 1154
+[27-Dec-2018 09:58:57 Asia/Tokyo] PHP Notice:  Undefined index: form_202_0 in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 2013
+[27-Dec-2018 09:58:57 Asia/Tokyo] PHP Notice:  Undefined index: form_202_0 in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 2013
+[27-Dec-2018 09:58:57 Asia/Tokyo] PHP Notice:  Undefined index: form_202_0 in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 2013
+[27-Dec-2018 09:58:57 Asia/Tokyo] PHP Notice:  Undefined index: form_202_0 in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 2022
+[27-Dec-2018 09:58:57 Asia/Tokyo] PHP Notice:  Undefined index: select_num in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 1154
+[27-Dec-2018 09:58:57 Asia/Tokyo] PHP Notice:  Undefined variable: makeDatepicker in /home/users/1/main.jp-mercury-app/web/suzuki/list.php on line 299
+[27-Dec-2018 09:58:57 Asia/Tokyo] PHP Notice:  Undefined index: form_start_0 in /home/users/1/main.jp-mercury-app/web/suzuki/f_SQL.php on line 660
+[27-Dec-2018 09:58:59 Asia/Tokyo] PHP Notice:  Undefined index: post in /home/users/1/main.jp-mercury-app/web/suzuki/listJump.php on line 17
+[27-Dec-2018 09:58:59 Asia/Tokyo] PHP Notice:  Undefined index: form_807_0 in /home/users/1/main.jp-mercury-app/web/suzuki/listJump.php on line 165
+[27-Dec-2018 09:59:08 Asia/Tokyo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/users/1/main.jp-mercury-app/web/suzuki/login.php:60) in /home/users/1/main.jp-mercury-app/web/suzuki/login.php on line 79
+[27-Dec-2018 09:59:08 Asia/Tokyo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/users/1/main.jp-mercury-app/web/suzuki/login.php:60) in /home/users/1/main.jp-mercury-app/web/suzuki/login.php on line 80
+[27-Dec-2018 09:59:08 Asia/Tokyo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/users/1/main.jp-mercury-app/web/suzuki/login.php:60) in /home/users/1/main.jp-mercury-app/web/suzuki/login.php on line 81
+[27-Dec-2018 10:05:07 Asia/Tokyo] PHP Notice:  Undefined index: filenmae in /home/users/1/main.jp-mercury-app/web/suzuki/pageJump.php on line 17
+[27-Dec-2018 10:05:07 Asia/Tokyo] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/users/1/main.jp-mercury-app/web/suzuki/list.php:1) in /home/users/1/main.jp-mercury-app/web/suzuki/list.php on line 2
+[27-Dec-2018 10:05:07 Asia/Tokyo] PHP Notice:  Undefined index: select_num in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 1154
+[27-Dec-2018 10:05:07 Asia/Tokyo] PHP Notice:  Undefined variable: makeDatepicker in /home/users/1/main.jp-mercury-app/web/suzuki/list.php on line 299
+[27-Dec-2018 10:05:38 Asia/Tokyo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/users/1/main.jp-mercury-app/web/suzuki/login.php:60) in /home/users/1/main.jp-mercury-app/web/suzuki/login.php on line 79
+[27-Dec-2018 10:05:38 Asia/Tokyo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/users/1/main.jp-mercury-app/web/suzuki/login.php:60) in /home/users/1/main.jp-mercury-app/web/suzuki/login.php on line 80
+[27-Dec-2018 10:05:38 Asia/Tokyo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/users/1/main.jp-mercury-app/web/suzuki/login.php:60) in /home/users/1/main.jp-mercury-app/web/suzuki/login.php on line 81
+[27-Dec-2018 10:06:37 Asia/Tokyo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/users/1/main.jp-mercury-app/web/suzuki/login.php:60) in /home/users/1/main.jp-mercury-app/web/suzuki/login.php on line 79
+[27-Dec-2018 10:06:37 Asia/Tokyo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/users/1/main.jp-mercury-app/web/suzuki/login.php:60) in /home/users/1/main.jp-mercury-app/web/suzuki/login.php on line 80
+[27-Dec-2018 10:06:37 Asia/Tokyo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/users/1/main.jp-mercury-app/web/suzuki/login.php:60) in /home/users/1/main.jp-mercury-app/web/suzuki/login.php on line 81
+[27-Dec-2018 10:07:05 Asia/Tokyo] PHP Notice:  Undefined index: filenmae in /home/users/1/main.jp-mercury-app/web/suzuki/pageJump.php on line 17
+[27-Dec-2018 10:07:05 Asia/Tokyo] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/users/1/main.jp-mercury-app/web/suzuki/list.php:1) in /home/users/1/main.jp-mercury-app/web/suzuki/list.php on line 2
+[27-Dec-2018 10:07:05 Asia/Tokyo] PHP Notice:  Undefined index: select_num in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 1154
+[27-Dec-2018 10:07:05 Asia/Tokyo] PHP Notice:  Undefined variable: makeDatepicker in /home/users/1/main.jp-mercury-app/web/suzuki/list.php on line 299
+[27-Dec-2018 10:07:05 Asia/Tokyo] PHP Notice:  Undefined index: form_start_0 in /home/users/1/main.jp-mercury-app/web/suzuki/f_SQL.php on line 660
+[27-Dec-2018 10:07:07 Asia/Tokyo] PHP Notice:  Undefined index: filenmae in /home/users/1/main.jp-mercury-app/web/suzuki/pageJump.php on line 17
+[27-Dec-2018 10:07:09 Asia/Tokyo] PHP Notice:  Undefined index: filenmae in /home/users/1/main.jp-mercury-app/web/suzuki/pageJump.php on line 17
+[27-Dec-2018 10:07:09 Asia/Tokyo] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/users/1/main.jp-mercury-app/web/suzuki/list.php:1) in /home/users/1/main.jp-mercury-app/web/suzuki/list.php on line 2
+[27-Dec-2018 10:07:09 Asia/Tokyo] PHP Notice:  Undefined index: select_num in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 1154
+[27-Dec-2018 10:07:09 Asia/Tokyo] PHP Notice:  Undefined variable: makeDatepicker in /home/users/1/main.jp-mercury-app/web/suzuki/list.php on line 299
+[27-Dec-2018 10:07:11 Asia/Tokyo] PHP Notice:  Undefined index: filenmae in /home/users/1/main.jp-mercury-app/web/suzuki/pageJump.php on line 17
+[27-Dec-2018 10:07:12 Asia/Tokyo] PHP Notice:  Undefined index: filenmae in /home/users/1/main.jp-mercury-app/web/suzuki/pageJump.php on line 17
+[27-Dec-2018 10:07:12 Asia/Tokyo] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/users/1/main.jp-mercury-app/web/suzuki/list.php:1) in /home/users/1/main.jp-mercury-app/web/suzuki/list.php on line 2
+[27-Dec-2018 10:07:12 Asia/Tokyo] PHP Notice:  Undefined index: select_num in /home/users/1/main.jp-mercury-app/web/suzuki/f_Form.php on line 1154
+[27-Dec-2018 10:07:12 Asia/Tokyo] PHP Notice:  Undefined variable: makeDatepicker in /home/users/1/main.jp-mercury-app/web/suzuki/list.php on line 299
+[27-Dec-2018 10:07:12 Asia/Tokyo] PHP Notice:  Undefined index: form_start_0 in /home/users/1/main.jp-mercury-app/web/suzuki/f_SQL.php on line 660
+[27-Dec-2018 10:07:17 Asia/Tokyo] PHP Notice:  Undefined index: filenmae in /home/users/1/main.jp-mercury-app/web/suzuki/pageJump.php on line 17
