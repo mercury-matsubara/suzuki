@@ -235,7 +235,7 @@
 //	echo $form;
 	echo "</tr></table>";
 	echo "<div class = 'center'>";
-	echo '<input type="file" name="inpath" size="150" class="free"><br><br>';
+	echo '<input type="file" name="inpath" size="150" ><br><br>';
 	echo '<input type="submit" name = "fileinsert" value = "取込" class="free">';
 //	if($isMaster == true)
 //	{

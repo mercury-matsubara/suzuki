@@ -3,6 +3,7 @@
 	header('Expires:-1'); 
 	header('Cache-Control:'); 
 	header('Pragma:'); 
+        header('Content-type: text/html; charset=UTF-8'); 
 	require_once("f_Construct.php");
 	start();
 	

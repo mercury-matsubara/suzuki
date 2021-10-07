@@ -170,7 +170,7 @@ function makebuttonmenu($fileName,$buttonPosition,$Rank){
 			for($i = 0 ; $i < $column_num ; $i++)
 			{
 				if(!isset($button_ini_array[$button_num_array[$total_count]]['value'])){
-					$button_html .="<div class = 'left' style ='WIDTH:140px ; HEIGHT:30px'> </div>";
+					$button_html .="<div class = 'left' style ='WIDTH:150px ; HEIGHT:30px'> </div>";
 				}else if($button_ini_array[$button_num_array[$total_count]]['value'] == 'ログアウト') {
 					$button_html .="<div align='right' style =' HEIGHT:".
 					$button_ini_array[$button_num_array[$total_count]]['size_y']."px'>";
@@ -214,29 +214,29 @@ function makebuttonmenu($fileName,$buttonPosition,$Rank){
 			for($i = 0 ; $i < $column_num ; $i++)
 			{
 				if($button_ini_array[$button_num_array[$total_count]]['value'] == ''){
-					$button_html .="<div class = 'left' style ='WIDTH:140px ; HEIGHT:30px'> </div>";
+					$button_html .="<div class = 'left' style ='WIDTH:150px ; HEIGHT:30px'> </div>";
 				}else if(strpos($button_ini_array[$button_num_array[$total_count]]['value'], "メンテ") != false && strpos($button_ini_array[$button_num_array[$total_count]]['value'], "指示書") != true)
 				{
-					$button_html .="<div class = 'left' style ='WIDTH:140px ; HEIGHT:30px'> </div>";
+					$button_html .="<div class = 'left' style ='WIDTH:150px ; HEIGHT:30px'> </div>";
 				}else if(strpos($button_ini_array[$button_num_array[$total_count]]['value'], "マスタ") != false)
 				{
-					$button_html .="<div class = 'left' style ='WIDTH:140px ; HEIGHT:30px'> </div>";
+					$button_html .="<div class = 'left' style ='WIDTH:150px ; HEIGHT:30px'> </div>";
 				}
 				else if(strpos($button_ini_array[$button_num_array[$total_count]]['value'], "理者") != false)
 				{
-					$button_html .="<div class = 'left' style ='WIDTH:140px ; HEIGHT:30px'> </div>";
+					$button_html .="<div class = 'left' style ='WIDTH:150px ; HEIGHT:30px'> </div>";
 				}
 				else if(strpos($button_ini_array[$button_num_array[$total_count]]['value'], "削除") != false)
 				{
-					$button_html .="<div class = 'left' style ='WIDTH:140px ; HEIGHT:30px'> </div>";
+					$button_html .="<div class = 'left' style ='WIDTH:150px ; HEIGHT:30px'> </div>";
 				}
 				else if($button_ini_array[$button_num_array[$total_count]]['value'] == "返品確定")
 				{
-					$button_html .="<div class = 'left' style ='WIDTH:140px ; HEIGHT:30px'> </div>";
+					$button_html .="<div class = 'left' style ='WIDTH:150px ; HEIGHT:30px'> </div>";
 				}
 				else if($button_ini_array[$button_num_array[$total_count]]['value'] == "操作履歴")
 				{
-					$button_html .="<div class = 'left' style ='WIDTH:140px ; HEIGHT:30px'> </div>";
+					$button_html .="<div class = 'left' style ='WIDTH:150px ; HEIGHT:30px'> </div>";
 				}
 				else if($button_ini_array[$button_num_array[$total_count]]['value'] == 'ログアウト') {
 					$button_html .="<div align='right' style =' HEIGHT:".

@@ -3,6 +3,7 @@
 	header('Expires:-1'); 
 	header('Cache-Control:'); 
 	header('Pragma:');
+        header('Content-type: text/html; charset=UTF-8'); 
 	require_once("f_Construct.php");
 	start();
 	require_once ("f_Button.php");
@@ -124,7 +125,7 @@
 	}
 	table#list th#th3 , table#list td#td3{
 		table-layout: fixed;
-		width: 200px;																											/* テーブル幅の設定 */
+		width: 180px;																											/* テーブル幅の設定 */
 		border: 2px #000000 solid;																								/* th,td部分の枠設定 */
 		border-collapse: collapse;																								/* テーブル枠の隙間設定 */
 		white-space: normal;
@@ -148,7 +149,7 @@
 		border-right-style:none;
 	}
 	table#list th.space3 {
-		width: 200px;
+		width: 180px;
 		border: 2px #000000 solid;																								/* th,td部分の枠設定 */
 		border-collapse: collapse;																								/* テーブル枠の隙間設定 */
 		border-top-style:none; 

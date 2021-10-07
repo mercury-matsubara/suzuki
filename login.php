@@ -201,14 +201,9 @@
 		});
 		set_button_size();
 	});
-	function closewindow()
-	{
-		close();
-	}
 --></script>
 </head>
 <body>
-	<input type='button' name='login' class='button' value = '画面を閉じる' style="WIDTH: 130px; HEIGHT: 30px" onClick="closewindow();">
 	<CENTER>
 	<?php
 		if($message != '')

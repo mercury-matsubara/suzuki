@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 	session_start(); 
 	require_once ("f_Button.php");
 	require_once ("f_DB.php");

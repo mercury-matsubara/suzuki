@@ -458,20 +458,16 @@ function inputcheck(name,size,type,isnotnull){
 	{
 		var w = screen.availWidth;
 		var h = screen.availHeight;
-		w = (w * 0.7);
-		h = (h * 0.7);
+		w = (w * 0.8);
+		h = (h * 0.8);
 		url = 'Modal.php?tablenum='+GET+'&form=insert';
-//		n = showModalDialog(
-//			url,
-//			this,
-////			"dialogWidth=800px; dialogHeight=480px; resizable=yes; maximize=yes"
-//			"dialogWidth=" + w + "px; dialogHeight=" + h + "px; resizable=yes; maximize=yes"
-//		);
-	        n = window.open(
-                        url,
-                        this,
-                        "width =" + w + ",height=" + h + ",resizable=yes,maximize=yes"
-                );	
+		n = showModalDialog(
+			url,
+			this,
+//			"dialogWidth=800px; dialogHeight=480px; resizable=yes; maximize=yes"
+			"dialogWidth=" + w + "px; dialogHeight=" + h + "px; resizable=yes; maximize=yes"
+		);
+	
 	}
 	function AddTableRows(id){
 		var table01 = document.getElementById('insert');
@@ -879,8 +875,7 @@ function inputcheck(name,size,type,isnotnull){
 		var judge = '<?php echo $judge ?>';
 		if(judge)
 		{
-			if(confirm("入力内容正常確認。\n情報登録しますがよろしいですか？\
-						\n再度確認する場合は「キャンセル」ボタンを押してください。"))
+			if(confirm("入力内容正常確認。\n情報登録しますがよろしいですか？\n再度確認する場合は「キャンセル」ボタンを押してください。"))
 			{
 				location.href = "./insertComp.php";
 			}
