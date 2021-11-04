@@ -901,6 +901,7 @@ function makeList2($sql){
 	//          定数          //
 	//------------------------//
 	$columns = '302,102,203,204,702';
+        $filename = $_SESSION['filename'];
 	$eria_format = $form_ini[$filename]['eria_format'];
 	if($eria_format != '1' && strstr($columns,'203') != '')
 	{
@@ -934,8 +935,11 @@ function makeList2($sql){
                 error_log($con->error,0);
 		$judge = false;
 	}
-	//$listcount = mysql_num_rows($result);                                                                   // 検索結果件数取得
-        $listcount = $result->num_rows;                         //mysql接続新	2018/10/25
+	//$listcount = mysql_num_rows($result);                                                            // 検索結果件数取得    
+        if(isset($result->num_rows))
+        {
+            $listcount = $result->num_rows;                         //mysql接続新	2018/10/25
+        }
 	$list_html .= "<table class ='list' id='slist2'><tr>";
 	$list_html .="<th><a class ='head'>No.</a></th>";
 	for($i = 0 ; $i < count($columns_array) ; $i++)
@@ -1966,7 +1970,7 @@ function update($post){
 	if($filename == "SYUKKAINFO_2" || $filename == "SHUKANYURYOKU_5"){
 		$sql = "UPDATE shukameiinfo SET SHUNUM = '".$post['form_702_0']."' WHERE 7CODE = ".$post['7CODE'].";";
 	}
-	else if(ZAIKOMENTE_2 == $filename){
+	else if("ZAIKOMENTE_2" == $filename){
 		$sql =  "UPDATE hinmeiinfo SET ZAIKONUM = ".$post['form_303_0']." WHERE 3CODE = ".$post['3CODE'];
 	}
 	//$result = mysql_query($sql) or ($judge = true);	
@@ -4210,6 +4214,7 @@ function shukapul($id){
 	//------------------------//
 	$judge =false;
 	$countnum = 0;
+        $shudate = "";
 	//------------------------//
 	//        検索処理        //
 	//------------------------//
@@ -5501,6 +5506,7 @@ function makeList_Modal2($sql,$post,$tablenum,$idnum){
 	//          定数          //
 	//------------------------//
 	$columns = $form_ini[$tablenum]['insert_form_num'];
+        $filename = $_SESSION['filename'];
 	$eria_format = $form_ini[$filename]['eria_format'];
 	if($eria_format != '1' && strstr($columns,'203') != '')
 	{
@@ -6073,6 +6079,11 @@ function insertnyuusyukka($post){
                                             $pricode = $result_row['PRICODE'];
                                         }
                                         
+                                        if(!isset($pricode))
+                                        {
+                                            $pricode = "";
+                                        }
+                                            
 					$sql_11CODE = "select * from henpininfo where 11CODE = ".$value_11CODE." ;";
 					/*$result = mysql_query($sql_11CODE);
 					$result_row = mysql_fetch_assoc($result);
@@ -6344,7 +6355,7 @@ function shukaID($post){
 	//          変数          //
 	//------------------------//
 	$sql = "";
-	
+	$shudate = "";
 	//------------------------//
 	//        検索処理        //
 	//------------------------//
@@ -7369,7 +7380,7 @@ function makeList_item22($sql,$post){
 	//------------------------//
 	$con = dbconect();						// db接続関数実行
 	//$result = mysql_query($sql[1]) or ($judge = true);		// クエリ発行
-        if($sql[1] != "")
+        if(isset($sql[1]) && $sql[1] != "")
         {    
             $result = $con->query($sql[1]) or ($judge = true);		//mysql接続新	2018/10/26
             if($judge)
@@ -7384,7 +7395,7 @@ function makeList_item22($sql,$post){
                     $totalcount = $result_row['COUNT(*)'];
             }
         }
-        if($sql[0] != "")
+        if(isset($sql[0]) && $sql[0] != "")
         {    
             $sql[0] = substr($sql[0],0,-1);											// 最後の';'削除
             $sql[0] .= $limit.";";												// LIMIT追加
@@ -7444,7 +7455,7 @@ function makeList_item22($sql,$post){
 		$list_html .="</tr><thead><tbody>";
 	}
         
-        if($sql[0] != "")
+        if(isset($sql[0]) && $sql[0] != "")
         {    
             //while($result_row = mysql_fetch_assoc($result))
             while($result_row = $result->fetch_array(MYSQLI_ASSOC))     //mysql接続新   2018/10/26       
@@ -7968,7 +7979,7 @@ function make_printlist2($code){
 	$sta2_counter = 0;																														// ステータス2のカウンター
 	$sta3_counter = 0;																														// ステータス3のカウンター
 	$surplus = 0;																															// 改ページ後のレコード数
-	
+	$judge = false;
 	//-------------------------------//
 	//            検索処理           //
 	//-------------------------------//
@@ -8060,7 +8071,7 @@ function make_printlist2($code){
 		{
                         $vul_hinname = $result_3CODE_row['HINNAME'];
                         $vul_soukoname = getsoukoname($result_3CODE_row['1CODE']);
-                        if($kubun == '1')
+                        if(isset($kubun) && $kubun == '1')
                         {
                                 $vul_erianame = geterianame($result_3CODE_row['2CODE']);
                         }
@@ -8274,6 +8285,7 @@ function insert_log($post)
 	$naiyou = "";
 	$delimiter = "-";
 	$pointer = "・";
+        $judge = false;
 
 	//-------------------------------//
 	//              処理             //
@@ -8509,7 +8521,7 @@ function update_log($post)
 	$naiyou = "";
 	$delimiter = "-";
 	$pointer = "・";
-
+        $judge = false;
 	//-------------------------------//
 	//              処理             //
 	//-------------------------------//
@@ -8711,7 +8723,8 @@ function delete_log($post,$data)
 	$naiyou = "";
 	$delimiter = "-";
 	$pointer = "・";
-
+        $judge = false;
+        
 	//-------------------------------//
 	//              処理             //
 	//-------------------------------//
@@ -8874,7 +8887,8 @@ function make_henpin($id)
                 $_SESSION['list']['form_402_0'] = $result_row['GENBAKB'];
                 $_SESSION['list']['form_403_0'] = $result_row['GENBANAME'];
         }
-	return ($code6);
+//	return ($code6);
+        return ($code4);
 }
 /***********************************************************************************************************************
 function make_henpin($id)										更新画面の操作log

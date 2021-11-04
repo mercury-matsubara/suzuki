@@ -293,12 +293,23 @@
         $formStrArray = makeformSerch_set($_SESSION['list'],"form");
         $form = $formStrArray[0];
 	//$form2 = makeformInsert_set($_SESSION['list'],$out_column,"true","insert");
+        $out_column = '';
         $formStrArray = makeformInsert_set($_SESSION['list'],$out_column,"true","insert");
         $form2 = $formStrArray[0];
-        $makeDatepicker .= $formStrArray[1];
+        if(isset($makeDatepicker))
+        {
+            $makeDatepicker .= $formStrArray[1];
+        }
+        else
+        {
+            $makeDatepicker = $formStrArray[1];
+        }
         //----------2018/10/29 追加---------//
-	$sql = joinSelectSQL22($_SESSION['list'],$main_table,$_SESSION['list']['form_1107_0']);
-	$list = makeList_item22($sql,$_SESSION['list']);
+        if(isset($_SESSION['list']['form_1107_0']))
+        {
+            $sql = joinSelectSQL22($_SESSION['list'],$main_table,$_SESSION['list']['form_1107_0']);
+        }
+        $list = makeList_item22($sql,$_SESSION['list']);
 	$checkList = $_SESSION['check_column'];
 	$isLavel = $form_ini[$filename]['isLabel'];
 	$isMail = $form_ini[$filename]['isMail'];

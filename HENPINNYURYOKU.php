@@ -957,7 +957,14 @@
         //--↓変更 2018/10/26--------------------------------------------------
         $hedder_formStrArray = makeformSerch_set($_SESSION['list'],"form");
         $hedder_form = $hedder_formStrArray[0];
-        $makeDatepicker .= $hedder_formStrArray[1];
+        if(isset($makeDatepicker))
+        {
+            $makeDatepicker .= $hedder_formStrArray[1];
+        }
+        else
+        {
+            $makeDatepicker = $hedder_formStrArray[1];
+        }
         //--↑変更 2018/10/26--------------------------------------------------
 	$out_column ="";
 	$isReadOnly = "true";

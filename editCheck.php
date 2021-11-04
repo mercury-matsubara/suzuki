@@ -580,7 +580,10 @@
                 //--↓2018/10/22--（カレンダー）
                 $formStrArray = makeformEdit_set($_SESSION['edit'],$errorinfo[0],$isReadOnly,"edit",$data );
                 $form = $formStrArray[0];
-                $makeDatepicker .= $formStrArray[1];
+                if(isset($makeDatepicker))
+                {
+                    $makeDatepicker .= $formStrArray[1];
+                }
                 //--↑2018/10/22-- (カレンダー)
 		$checkList = $_SESSION['check_column'];
 		$notnullcolumns = $_SESSION['notnullcolumns'];

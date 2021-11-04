@@ -522,7 +522,10 @@ function FileReadInsert(){
 				$naiyou = "";
 				
 				$strsub = explode(",", $line); //カンマ区切りのデータを取得
-				$strsub[3] =  $text = str_replace(array("\r\n", "\r", "\n"), '', $strsub[3]);
+                                if(isset($strsub[3]))
+                                {
+                                    $strsub[3] =  $text = str_replace(array("\r\n", "\r", "\n"), '', $strsub[3]);
+                                }
 				$cnt = count($strsub);
 				$restable .= "<tr>";
 				if ($strsub[0] == "" || $strsub[2] == "" || $strsub[3] == ""){

@@ -774,7 +774,8 @@ function inputcheck(name,size,type,isnotnull){
 				var nyukapul  = "<?php echo $nyukapulp; ?>";
 				var resArray4 =  nyukapul.split(",");
 				var code = document.getElementsByName('3CODE')[(document.getElementsByName('3CODE').length-1)].value;
-				var date = document.getElementById("form_505_0").value + "-" + ("0"+document.getElementById("form_505_1").value).slice(-2) + "-" + ("0"+ document.getElementById("form_505_2").value).slice(-2);
+				//var date = document.getElementById("form_505_0").value + "-" + ("0"+document.getElementById("form_505_1").value).slice(-2) + "-" + ("0"+ document.getElementById("form_505_2").value).slice(-2);
+				var date = document.getElementById("form_505").value + "-" + ("0"+document.getElementById("form_505").value).slice(-2) + "-" + ("0"+ document.getElementById("form_505").value).slice(-2);
 				for(var i = 0; i < resArray4.length; i = i + 7)
 				{
 					if((code == resArray4[i + 1]) && (date == resArray4[i + 4]))
@@ -985,7 +986,10 @@ function inputcheck(name,size,type,isnotnull){
         //--↓2018/10/22--（カレンダー）
 	$formStrArray = makeformInsert_set($_SESSION['insert'],$out_column,$isReadOnly,"insert");
         $form = $formStrArray[0];
-        $makeDatepicker .= $formStrArray[1];
+        if(isset($makeDatepicker))
+        {
+            $makeDatepicker .= $formStrArray[1];
+        }
         //--↑2018/10/22-- (カレンダー)
 	$checkList = $_SESSION['check_column'];
 	$notnullcolumns = $_SESSION['notnullcolumns'];

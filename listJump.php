@@ -162,7 +162,7 @@
 		{
 			$idarray = explode('_',$key);
 			$_SESSION['list']['id'] = $idarray[1];
-			if($_POST['form_807_0'] != "")
+			if(isset($_POST['form_807_0']) && $_POST['form_807_0'] != "")
 			{
 				$_SESSION['edit']['form_703_0'] = $_POST['form_807_0'];
 			}
@@ -327,7 +327,7 @@
 			$_SESSION['post'] = null;
 		
 			$url = 'insertrireki';
-			$_SESSION['filename'] = SOKONYUKA_2;
+			$_SESSION['filename'] = "SOKONYUKA_2";
 			header("location:".(empty($_SERVER['HTTPS'])? "http://" : "https://")
 			.$_SERVER['HTTP_HOST'].((dirname($_SERVER["REQUEST_URI"])==='/')? '' : dirname($_SERVER["REQUEST_URI"]))."/".$url.".php");
 			exit();

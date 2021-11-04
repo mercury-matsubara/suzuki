@@ -455,7 +455,14 @@ function joinSelectSQL($post,$tablenum){
 		}
 		$columnName = $form_ini[$columns_array[$i]]['column'];
 		$fieldtype = $form_ini[$columns_array[$i]]['fieldtype'];
-		$singleQute = $fieldtype_ini[$fieldtype];
+                if(isset($fieldtype_ini[$fieldtype]))
+                {
+                    $singleQute = $fieldtype_ini[$fieldtype];
+                }
+                else
+                {
+                    $singleQute = '';
+                }
 		if ($singleQute == '' && $columnName != '6CODE')
 		{
 			$convert = " ".$tableName.".".$columnName;
@@ -657,7 +664,7 @@ function joinSelectSQL($post,$tablenum){
 	$count_SQL = rtrim($count_SQL,'WHERE');
 	$count_SQL = rtrim($count_SQL,'AND');
      
-	if($post['form_start_0'] != "")
+	if(isset($post['form_start_0']) && $post['form_start_0'] != "")
 	{
 		$before_year = $form_ini[$filename]['before_year'];
 		$after_year = $form_ini[$filename]['after_year'];
@@ -986,7 +993,11 @@ function UpdateSQL($post,$tablenum,$over){
 			for( $i = 0 ; $i < count($mastertablenum_array) ; $i++)
 			{
 				$update_SQL .= " ".$mastertablenum_array[$i]."CODE = ";
-				$update_SQL .= $post[$mastertablenum_array[$i]."CODE"].",";
+                                
+                                if(isset($post[$mastertablenum_array[$i]."CODE"]))
+                                {
+                                    $update_SQL .= $post[$mastertablenum_array[$i]."CODE"].",";
+                                }
 			}
 		}
 	}
@@ -1818,6 +1829,7 @@ function joinSelectSQL2($post,$tablenum){
 	//------------------------//
 	//          定数          //
 	//------------------------//
+        $filename = $_SESSION['filename'];
 	$columns = $form_ini[$tablenum]['insert_form_num'];
 	$eria_format = $form_ini[$filename]['eria_format'];
 	if($eria_format != '1' && strstr($columns,'203') != '')
@@ -2084,7 +2096,7 @@ function joinSelectSQL2($post,$tablenum){
 	$count_SQL = rtrim($count_SQL,'WHERE');
 	$count_SQL = rtrim($count_SQL,'AND');
 	
-	if($post['form_start_0'] != "")
+	if(isset($post['form_start_0']) && $post['form_start_0'] != "")
 	{
                 $filename = $_SESSION['filename'];
                 $between = $form_ini[$filename]['betweenColumn'];
@@ -2225,6 +2237,7 @@ function joinSelectSQL3($post,$tablenum){
 	//          定数          //
 	//------------------------//
 	$columns = $form_ini[$tablenum]['insert_form_num'];
+        $filename = $_SESSION['filename'];
 	$eria_format = $form_ini[$filename]['eria_format'];
 	if($eria_format != '1' && strstr($columns,'203') != '')
 	{
@@ -2462,7 +2475,7 @@ function joinSelectSQL3($post,$tablenum){
 	$count_SQL = rtrim($count_SQL,'WHERE');
 	$count_SQL = rtrim($count_SQL,'AND');
 	
-	if($post['form_start_0'] != "")
+	if(isset($post['form_start_0']) && $post['form_start_0'] != "")
 	{
 		$before_year = $form_ini[$filename]['before_year'];
 		$after_year = $form_ini[$filename]['after_year'];
@@ -2599,6 +2612,7 @@ function joinSelectSQL4($post,$tablenum){
 	//          定数          //
 	//------------------------//
 	$columns = $form_ini[$tablenum]['insert_form_num'];
+	$filename = $_SESSION['filename'];
 	$eria_format = $form_ini[$filename]['eria_format'];
 	if($eria_format != '1' && strstr($columns,'203') != '')
 	{
@@ -2639,11 +2653,15 @@ function joinSelectSQL4($post,$tablenum){
 	$select_SQL .= "SELECT * FROM ".$tableName." ";
 	$count_SQL .= "SELECT COUNT(*) FROM ".$tableName." ";
 	
-	if(isset($_SESSION['list']['6CODE']))
+        if(isset($_SESSION['list']['6CODE']))
 	{
-		$code = $_SESSION['list']['6CODE'];
+            $code = $_SESSION['list']['6CODE'];
 	}
-	
+        else 
+        {
+            $code = "";
+        }
+        
 	$select_SQL .= "LEFT JOIN genbainfo ON (shukayoteiinfo.4CODE = genbainfo.4CODE) ";
 	$select_SQL .= "RIGHT JOIN shukameiinfo ON (shukayoteiinfo.6CODE = shukameiinfo.6CODE) ";
 	$select_SQL .= "LEFT JOIN soukoinfo ON (shukameiinfo.1CODE = soukoinfo.1CODE) ";
@@ -2655,10 +2673,10 @@ function joinSelectSQL4($post,$tablenum){
 	$count_SQL .= "LEFT JOIN soukoinfo ON (shukameiinfo.1CODE = soukoinfo.1CODE) ";
 	$count_SQL .= "LEFT JOIN eriainfo ON (shukameiinfo.2CODE = eriainfo.2CODE) ";
 	$count_SQL .= "LEFT JOIN hinmeiinfo ON (shukameiinfo.3CODE = hinmeiinfo.3CODE) ";
-
-	$select_SQL .= " WHERE (shukayoteiinfo.6CODE = '".$code."');";
-	$count_SQL .= " WHERE (shukayoteiinfo.6CODE = '".$code."');";
-
+ 
+        $select_SQL .= " WHERE (shukayoteiinfo.6CODE = '".$code."');";
+        $count_SQL .= " WHERE (shukayoteiinfo.6CODE = '".$code."');";
+	
 	$sql[0] = $select_SQL;
 	$sql[1] = $count_SQL;
 	return ($sql);
@@ -3238,7 +3256,7 @@ function joinSelectSQL6($post,$tablenum){
         // 2018/10/23 追加対応 ↑(カレンダー)
 
         
-	if($post['form_start_0'] != "")
+	if(isset($post['form_start_0']) && $post['form_start_0'] != "")
 	{
 		$before_year = $form_ini[$filename]['before_year'];
 		$after_year = $form_ini[$filename]['after_year'];
@@ -3328,7 +3346,7 @@ function joinSelectSQL6($post,$tablenum){
 	
 //	if($filename == 'RIREKI_2')
 //	{
-		if($post['6CODE'] != ""){
+		if(isset($post['6CODE']) && $post['6CODE'] != ""){
 			if(strstr($select_SQL, ' WHERE ') == false){
 				$select_SQL .= " WHERE 6CODE = ".$post['6CODE'];
 				$count_SQL .= " WHERE 6CODE = ".$post['6CODE'];
@@ -3447,9 +3465,10 @@ function joinSelectSQLLike($post,$tablenum){
 //							$masterNums_array[$i]."CODE ) ";
 //			}
 
+                        $masterName[$i] = $form_ini[$masterNums_array[$i]]['table_name'];
+                    
 			if(!($tableName == 'shukayoteiinfo' && $masterNums_array[$i] == '7'))
 			{
-				$masterName[$i] = $form_ini[$masterNums_array[$i]]['table_name'];
 				$select_SQL .= "LEFT JOIN ".$masterName[$i]." ON (".$tableName.".".
 								$masterNums_array[$i]."CODE = ".$masterName[$i].".".
 								$masterNums_array[$i]."CODE ) ";
@@ -3462,7 +3481,6 @@ function joinSelectSQLLike($post,$tablenum){
 			}
 			else
 			{
-				$masterName[$i] = $form_ini[$masterNums_array[$i]]['table_name'];
 				$select_SQL .= "LEFT JOIN ".$masterName[$i]." ON (".$tableName.".".
 							$masterNums_array[$i]."CODE = ".$masterName[$i].".".
 							$masterNums_array[$i]."CODE ) ";
@@ -3470,7 +3488,7 @@ function joinSelectSQLLike($post,$tablenum){
 							$masterNums_array[$i]."CODE = ".$masterName[$i].".".
 							$masterNums_array[$i]."CODE ) ";
 			}
-
+                        
 		}
 
 	}

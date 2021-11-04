@@ -77,12 +77,12 @@
 //	echo "<form action='pageJump.php' method='post'>";
 //	echo "<left>";
 //	echo makebutton($filename,'top');
-	echo "<br><br><br><br>";
-	echo "<center>";
-	echo "<a class='title'>".$title."</a><br><br><br>";
-	echo "<img src='./image/titlerogo.png'>";
-	echo "</center>";
 	echo "<br><br>";
+	echo "<center>";
+	echo "<a class='title'>".$title."</a><br><br>";
+	echo "<img src='./image/titlerogo.jpg' width='180px'>";
+	echo "</center>";
+//	echo "<br><br>";
 	echo "<div class = 'left' id = 'space_button'></div>";
 	echo "<div><table id = 'button'><tr><td>";
 		if($_SESSION['userName'] == "Master"){

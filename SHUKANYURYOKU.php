@@ -365,7 +365,10 @@
         //--↓2018/10/22--（カレンダー）
         $formStrArray = makeformSerch_set_item($_SESSION['list'],"form");
         $form = $formStrArray[0];
-        $makeDatepicker .= $formStrArray[1];
+        if(isset($makeDatepicker))
+        {
+            $makeDatepicker .= $formStrArray[1];
+        }
         //--↑2018/10/22-- (カレンダー)
 
 	if($filename == 'HENKYAKUINFO_2')

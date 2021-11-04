@@ -137,7 +137,7 @@
 	<a class = "title">ログイン</a>
 	<br><br>
 	<form action="login.php" method="post">
-	<img src="./image/titlerogo.png">
+	<img src="./image/titlerogo.jpg">
 	<?php
 	if($comment != "")
 	{

@@ -202,7 +202,10 @@ function makeformInsert_set($post,$out_column,$isReadOnly,$formName){
 						$insert_str .="<tr><td class = 'space'></td><td class ='one'>";
 					}
 					$form_item_name = $form_ini[$Colum]['item_name'];
-					$table_title = $form_ini[$columns_array[$i]]['link_num'];
+                                        if(isset($form_ini[$columns_array[$i]]['link_num']))
+                                        {
+                                            $table_title = $form_ini[$columns_array[$i]]['link_num'];
+                                        }
 					if($filename == 'RESHUKA_5' && $form_item_name == '出荷予定日')
 					{
 						$form_item_name = '納品日';
@@ -1151,7 +1154,14 @@ function makeformSerch_set($post,$formName){
 			break;
 		}
 		$Colum = $columns_array[$i];
-		$select_num = $form_ini[$Colum]['select_num'];
+                if(isset($form_ini[$Colum]['select_num']))
+                {
+                    $select_num = $form_ini[$Colum]['select_num'];
+                }
+                else
+                {
+                    $select_num = 0;
+                }
 		if(isset($form_ini[$Colum]['table_name']))
 		{
 			$insertColumn = $form_ini[$Colum]['insert_form_num'];
@@ -1298,7 +1308,7 @@ function makeformSerch_set($post,$formName){
 		}
 		else
 		{
-			if($select_num == 1)														//モーダル遷移用のボタン生成
+			if(isset($select_num) && $select_num == 1)														//モーダル遷移用のボタン生成
 			{
 				$table_title = $form_ini[$Colum]['item_name'];
 				$use_table = $form_ini[$Colum]['table_num'];
@@ -2010,7 +2020,7 @@ function pulldown_set($type,$name,$over,$post,$ReadOnly,$formName,$isnotnull){
 		{
 			$text = mb_convert_encoding($result_row['SOKONAME'], "UTF-8", "UTF-8");
 			$value = $result_row['1CODE'];
-			if($value == $post[$formname])
+			if(isset($post[$formname]) && $value == $post[$formname])
 			{
 				$select = ' selected ';
 				$isSelect=true;
@@ -2019,7 +2029,7 @@ function pulldown_set($type,$name,$over,$post,$ReadOnly,$formName,$isnotnull){
 			$pulldown.='<option value ="'.$value.'" '.$select.' >'.$text.'</option>';
 			$select = "";
 		}
-		if($post[$formname] == "")
+		if(!isset($post[$formname]) || $post[$formname] == "")
 		{
 			$pulldown.='<option value ="" selected >---選択して下さい---</option>';
 		}
@@ -3105,7 +3115,10 @@ function makeformEdit_set($post,$out_column,$isReadOnly,$formName,$data){
 						$form_size = $form_ini[$Colum]['form'.($k +1).'_size'];
 						$form_format = $form_ini[$Colum]['form'.($k +1).'_format'];
 						$form_length = $form_ini[$Colum]['form'.($k +1).'_length'];
-						$form_isJust = $form_ini[$Colum]['isJust'];
+                                                if(isset($form_ini[$Colum]['isJust']))
+                                                {
+                                                    $form_isJust = $form_ini[$Colum]['isJust'];
+                                                }
 						$form_delimiter = $form_ini[$Colum]['form'.($k +1).'_delimiter'];
 //-------------- 桁数表示追加
 						$flen = $form_ini[$Colum]['form'.($k +1).'_length'];
@@ -3324,8 +3337,11 @@ function makeformEdit_set($post,$out_column,$isReadOnly,$formName,$data){
 	{
 		if(!in_array($masters_array[$i],$columns_array) && $masters_array[$i] != "")
 		{
+                    if(isset($post[$masters_array[$i].'CODE']))
+                    {
 			$insert_str .= "<input type='hidden' name = '".$masters_array[$i]."CODE' value ='".
 						$post[$masters_array[$i].'CODE']."' >";
+                    }
 		}
 	}
 	
@@ -3567,6 +3583,8 @@ function EditComp($post,$data){
                                 if($Colum == "505")
                                 {
                                         // 「/」で分割
+                                    if(isset($post['form_505']))
+                                    {
                                        $start_array = explode("/", $post['form_505']);
                                        // YMDで分けた値のデフォルトをセット
                                        $post['form_505'."_0"] = "";
@@ -3588,7 +3606,7 @@ function EditComp($post,$data){
                                        {
                                            $post['form_505'."_2"] = intval($start_array[2]);
                                        }
-
+                                    }
                                 }
                                 //-----------↑2018/10/29  カレンダー追加　-----------------------
 				for($k = 0 ; $k < 5 ; $k++)
@@ -4300,7 +4318,14 @@ function makeformSerch_set_item($post,$formName){
 			break;
 		}
 		$Colum = $columns_array[$i];
-		$select_num = $form_ini[$Colum]['select_num'];
+                if(isset($form_ini[$Colum]['select_num']))
+                {
+                    $select_num = $form_ini[$Colum]['select_num'];
+                }
+                else
+                {
+                    $select_num = 0;
+                }
 		if(isset($form_ini[$Colum]['table_name']))
 		{
 			$insertColumn = $form_ini[$Colum]['insert_form_num'];

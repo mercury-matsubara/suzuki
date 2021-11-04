@@ -96,8 +96,22 @@
 	//echo print_r($_SESSION);*/
         
         //-----------------2018/10/25 追加------------------//
-        $selitem1 = $_SESSION['edit']['1CODE'];
-	$selitem2 = $_SESSION['edit']['2CODE'];
+        if(isset($_SESSION['edit']['1CODE']))
+        {
+            $selitem1 = $_SESSION['edit']['1CODE'];
+        }
+        else
+        {
+            $selitem1 = "";
+        }
+        if(isset($_SESSION['edit']['2CODE']))
+        {
+            $selitem2 = $_SESSION['edit']['2CODE'];
+        }
+        else
+        {
+            $selitem2 = "";
+        }
 	$soukolist = soukoget();
 	$hinlist = hinget();
 	$erialist = eriaget();
@@ -142,8 +156,8 @@
 <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/redmond/jquery-ui.css" >
 <!-- ▼jQuery-UI -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
 <!-- ▲jQuery-UI -->
 <script src='./inputcheck.js'></script>
 <script src='./generate_date.js'></script>
@@ -1001,7 +1015,10 @@ function inputcheck(name,size,type,isnotnull){
                 //--↓2018/10/22--（カレンダー）
                 $formStrArray = makeformEdit_set($_SESSION['edit'],$out_column,$isReadOnly,"edit",$data );
                 $form = $formStrArray[0];
-                $makeDatepicker .= $formStrArray[1];
+                if(isset($makeDatepicker))
+                {
+                    $makeDatepicker .= $formStrArray[1];
+                }
                 //--↑2018/10/22-- (カレンダー)
                 
 		$checkList = $_SESSION['check_column'];

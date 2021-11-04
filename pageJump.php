@@ -14,7 +14,11 @@
 	$_SESSION['USERCODE'] = $code;
 	$_SESSION['pre_post'] = $_POST;
 	$_SESSION['files'] = $_FILES;
-	$filename = $_SESSION['filenmae'];
+	if (isset($_SESSION['filenmae']) ) 
+        {
+            $filename = $_SESSION['filenmae'];
+        }
+
 	$keyarray = array_keys($_POST);
 	if(isset($_POST['6CODE']))
 	{
@@ -98,6 +102,7 @@
 //	echo $pre_url[0]."_".$pre_url[1];
 	header("location:".(empty($_SERVER['HTTPS'])? "http://" : "https://")
 			.$_SERVER['HTTP_HOST'].dirname($_SERVER["REQUEST_URI"]).((dirname($_SERVER["REQUEST_URI"])==='/')? '' : '/').$url.".php");
+	exit();
 //	echo '<script type="text/javascript">';
 //	echo "<!--\n";
 //	echo 'location.href = "./'.$url.'.php";';
