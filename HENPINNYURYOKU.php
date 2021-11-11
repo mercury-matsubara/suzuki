@@ -377,7 +377,7 @@
 				for(var rcnt = 0; rcnt < t_rows; rcnt++ )
 				{
 					var row = table.rows[rcnt];
-					if(hin == row.cells(1).textContent)
+					if(hin == row.cells[1].textContent)
 					{
 						alert("すでに登録されたデータです");
 						judge = false;
@@ -637,25 +637,25 @@
 			for(var i = 0; i < t_rows; i++)
 			{
 				var row = table.rows[i];
-				if(row.cells(0).innerText == code)
+				if(row.cells[0].innerText == code)
 				{
 					break;
 				}
 			}
 			if(kubun == "1")
 			{
-				row.cells(1).innerHTML = hin;
-				row.cells(2).innerHTML = souko;
-				row.cells(3).innerHTML = kbn;
-				row.cells(4).innerHTML = eria;
-				row.cells(5).innerHTML = henpin;
+				row.cells[1].innerHTML = hin;
+				row.cells[2].innerHTML = souko;
+				row.cells[3].innerHTML = kbn;
+				row.cells[4].innerHTML = eria;
+				row.cells[5].innerHTML = henpin;
 			}
 			else
 			{
-				row.cells(1).innerHTML = hin;
-				row.cells(2).innerHTML = souko;
-				row.cells(3).innerHTML = eria;
-				row.cells(4).innerHTML = henpin;
+				row.cells[1].innerHTML = hin;
+				row.cells[2].innerHTML = souko;
+				row.cells[3].innerHTML = eria;
+				row.cells[4].innerHTML = henpin;
 			}
 			submit_data[code] = code3 + "," + henpin + "," + code1 + "," + code2 + ",";
 			//2017-12-15
@@ -709,7 +709,7 @@
 		for(var i = 0; i < t_rows; i++)
 		{
 			var row = table.rows[i];
-			if(row.cells(0).innerText == code)
+			if(row.cells[0].innerText == code)
 			{
 				table.deleteRow(i);
 				break;
@@ -728,7 +728,7 @@
 		for(var i = 0; i < t_rows; i++)
 		{
 			var row = table.rows[i];
-			if(row.cells(0).innerText == code)
+			if(row.cells[0].innerText == code)
 			{
 				break;
 			}
