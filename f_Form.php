@@ -4788,7 +4788,25 @@ function datepickerDate_set($type,$beforeyear,$afteryear,$name,$over,$post,$Read
 	{
 		$d_value = $post[$d_name];
 	}
-        
+        if(isset($post['form_505']))
+        {
+                $start_array = explode("/", $post['form_505']);
+                if(count($start_array) > 0 &&
+                   is_numeric($start_array[0]) == true )
+                {
+                    $y_value = $start_array[0];
+                }
+                if(count($start_array) > 1 &&
+                   is_numeric($start_array[1]) == true)
+                {
+                    $m_value = intval($start_array[1]);
+                }
+                if(count($start_array) > 2 &&
+                   is_numeric($start_array[2]) == true)
+                {
+                    $d_value = intval($start_array[2]);
+                }
+        }        
         
         if(isset($y_value) && isset($m_value) && isset($d_value))
         {

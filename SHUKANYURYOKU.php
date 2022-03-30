@@ -369,6 +369,10 @@
         {
             $makeDatepicker .= $formStrArray[1];
         }
+        else
+        {
+            $makeDatepicker = $formStrArray[1];
+        }
         //--↑2018/10/22-- (カレンダー)
 
 	if($filename == 'HENKYAKUINFO_2')

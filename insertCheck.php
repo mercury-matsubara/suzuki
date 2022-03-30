@@ -806,6 +806,10 @@ function inputcheck(name,size,type,isnotnull){
         {
             $makeDatepicker .= $formStrArray[1];
         }
+        else
+        {
+            $makeDatepicker = $formStrArray[1];
+        }
         //--↑2018/10/22-- (カレンダー)
 	$checkList = $_SESSION['check_column'];
 	$notnullcolumns = $_SESSION['notnullcolumns'];
