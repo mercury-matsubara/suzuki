@@ -506,7 +506,10 @@
 		echo "<input type ='submit' name = 'nyuukakautei' class='free' value = '確定'>";
 		echo "</div>";
 	}
-	
+    if($filename == "SHUKANYURYOKU_5")
+    {
+        echo "<input type ='hidden' name ='token'  value ='".$_SESSION["token"]."' >";  
+    }
 	echo "</form><br>";
 	if($isCSV == 1)
 	{
@@ -527,6 +530,11 @@
 	{
 		echo "<input type ='submit' value = '明細追加' class = 'free' name = 'SHUKANYURYOKU_1_button' disabled='disabled'>";
 	}
+    //複数タブ操作対策 2022/04/01
+    if($filename == "SHUKANYURYOKU_5")
+    {
+        echo "<input type ='hidden' name ='token'  value ='".$_SESSION["token"]."' >";
+    }
 		echo "</form>";
 		echo "</td>";
 

@@ -9,11 +9,13 @@
 
 	$name = $_SESSION['userName'];
 	$code = $_SESSION['USERCODE'];
+    $code3 = $_SESSION["3CODE"];
 	$_SESSION = array();
 	$_SESSION['userName'] = $name;
 	$_SESSION['USERCODE'] = $code;
 	$_SESSION['pre_post'] = $_POST;
 	$_SESSION['files'] = $_FILES;
+    $_SESSION['3CODE'] = $code3;
 	if (isset($_SESSION['filenmae']) ) 
         {
             $filename = $_SESSION['filenmae'];

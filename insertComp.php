@@ -77,6 +77,15 @@
 		{
 			echo '<input type="submit" name = "back" value = "一覧に戻る" class="free">';
 		}
+        if($filename == "SHUKANYURYOKU_1" || $filename == "SOKONYURYOKU_1")
+        {
+            if($filename == "SHUKANYURYOKU_1")
+            {
+                echo '<input type="hidden" name="form_703_0" value="'.$_SESSION["insert"]["form_703_0"].'">';
+            }
+            echo '<input type="hidden" name = "token" value = "'.$_SESSION["insert"]["token"].'">';
+            unset($_SESSION["3CODE"][$_SESSION["insert"]["token"]]);
+        }
 		echo "</form></div>";
 		$_SESSION['insert'] = null;
 	}

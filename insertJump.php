@@ -75,6 +75,14 @@
 					unlink($file);
 				}
 			}
+            if(isset($_POST["token"]))
+            {
+                $_SESSION["token"] = $_POST["token"];
+            }
+            if(isset($_POST["form_703_0"]))
+            {
+                $_SESSION["code6"] = $_POST["form_703_0"];
+            }
 			unset($_SESSION['files']);
 			unset($_SESSION['insert']);
 			unset($_SESSION['upload']);
@@ -99,6 +107,10 @@
 			if($filename_array[0] == 'SHUKANYURYOKU')
 			{
 				$_SESSION['filename'] = $filename_array[0]."_5";
+                if(isset($_POST["form_703_0"]))
+                {
+                    $_SESSION["return"]["6CODE"] = $_POST["form_703_0"];
+                }
 				header("location:".(empty($_SERVER['HTTPS'])? "http://" : "https://")
 						.$_SERVER['HTTP_HOST'].dirname($_SERVER["REQUEST_URI"])."/SHUKANYURYOKU.php");
 			}

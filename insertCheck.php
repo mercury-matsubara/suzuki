@@ -55,6 +55,11 @@
 	$soukopulp = soukopul();
 	$eriapulp = eriapul();
 	$soukolist = soukoget();
+    
+    if(isset($_SESSION["6CODE"]) && isset($_SESSION["insert"]["form_703_0"]))
+    {
+        $_SESSION["6CODE"] = $_SESSION["insert"]["form_703_0"];
+    }
         if(isset($_SESSION['6CODE']))   //2018/10/24 追加
         {
             $nyukapulp = nyukapul($_SESSION['6CODE']);
@@ -785,6 +790,8 @@ function inputcheck(name,size,type,isnotnull){
 	$html = "";
 	$out_column ='';
 	$judge = false;
+    $tab_check = false;
+    $exist_error = false;
 	$_SESSION['post'] = $_SESSION['pre_post'];
 	$_SESSION['pre_post'] = null;
 	$errorinfo = existCheck($_SESSION['insert'],$main_table,1);
@@ -793,6 +800,15 @@ function inputcheck(name,size,type,isnotnull){
 		$judge = true;
 		$_SESSION['insert']['true'] = true;
 		$_SESSION['pre_post'] = $_SESSION['post'];
+        //複数タブ操作チェック
+        if(isset($_SESSION["insert"]["token"]))
+        {
+            $tab_check = tab_check($_SESSION["insert"]["filename"],$_SESSION["insert"]["token"]);
+            if($tab_check)
+            {
+                $judge = false;
+            }
+        }
 	}
 	if($filename == 'RESHUKA_1')
 	{
@@ -839,10 +855,18 @@ function inputcheck(name,size,type,isnotnull){
 	echo "<a class = 'title'>".$title1.$title2."</a>";
 	echo "</div>";
 	echo "<br><br>";
-	for($i = 1 ; $i < count($errorinfo) ; $i++)
-	{
-		echo "<a class = 'error'>".$errorinfo[$i]."</a><br>";
-	}
+    //出荷入力画面のエラー表示方法を変更　2022/04/01
+    for($i = 1 ; $i < count($errorinfo) ; $i++)
+    {
+        if(isset($_SESSION["insert"]["token"]))
+        {
+            $exist_error = true;
+        }
+        else
+        {
+            echo "<a class = 'error'>".$errorinfo[$i]."</a><br>";
+        }
+    }
 	echo $form;
 	echo '<input type ="hidden" name = "form_305_1" id = "form_305_1"  class = "" value = "" size = "30" >';
 	if(isset($_SESSION['6CODE']))
@@ -857,6 +881,12 @@ function inputcheck(name,size,type,isnotnull){
 	{
 		echo "<input type ='hidden' name = 'form_1107_0' id = 'form_1107_0'  class = '' value = '".$_SESSION['insert']['form_1107_0']."' size = '30' >";
 	}
+    //複数タブ操作対策 2022/04/05
+    if(isset($_SESSION["insert"]["token"]))
+    {
+        echo '<input type="hidden" name="token" value="'.$_SESSION["insert"]["token"].'">';
+        echo '<input type="hidden" name="filename" value="'.$_SESSION["insert"]["filename"].'">';
+    }
 	echo "</tr></table>";
 	echo "<div class = 'center'>";
 	echo '<input type="submit" name = "insert" value = "登録" class="free" onClick ="getValue();">';
@@ -875,11 +905,33 @@ function inputcheck(name,size,type,isnotnull){
 	}
 	echo "</form>";
 	echo "</div>";
+    //複数タブ、既登録エラー時の処理 2022/04/05
+    if($tab_check == true || $exist_error == true)
+    {
+        $_SESSION['pre_post'] = $_SESSION['post'];
+        $_SESSION['post'] = null;
+        if($_SESSION["insert"]["filename"] == "SHUKANYURYOKU_1")
+        {
+            $_SESSION['filename'] = "SHUKANYURYOKU_5";
+            $_SESSION["return"]["6CODE"] = $_SESSION["insert"]["form_703_0"];
+        }
+        if($_SESSION["insert"]["filename"] == "SOKONYURYOKU_1")
+        {
+            $_SESSION['filename'] = "SOKONYURYOKU_2";
+        }
+        unset($_SESSION['files']);
+        //unset($_SESSION['insert']);
+        unset($_SESSION['upload']);		
+    }
 ?>
 <script language="JavaScript"><!--
 
 	window.onload = function(){
 		var judge = '<?php echo $judge ?>';
+        var tab_check = '<?php echo $tab_check ?>';
+        var exist_error = '<?php echo $exist_error ?>';
+        var filename = '<?php echo $_SESSION["insert"]["filename"]; ?>';
+
 		if(judge)
 		{
 			if(confirm("入力内容正常確認。\n情報登録しますがよろしいですか？\n再度確認する場合は「キャンセル」ボタンを押してください。"))
@@ -887,6 +939,32 @@ function inputcheck(name,size,type,isnotnull){
 				location.href = "./insertComp.php";
 			}
 		}
+        if(tab_check)
+        {
+            if(filename == "SHUKANYURYOKU_1")
+            {
+                alert("他の画面にてデータが編集されているため、\n登録できません。");
+                location.href = "./SHUKANYURYOKU.php";
+            }
+            if(filename == "SOKONYURYOKU_1")
+            {
+                alert("他の端末から同じ日付に入荷入力されました。\nご確認ください。");
+                location.href = "./list.php";            
+            }
+        }
+        if(exist_error)
+        {
+            if(filename == "SHUKANYURYOKU_1")
+            {
+                alert("現場情報を取得できませんでした。\n出荷入力画面に戻ります。");
+                location.href = "./SHUKANYURYOKU.php";
+            }
+            if(filename == "SOKONYURYOKU_1")
+            {
+                alert("情報を取得できませんでした。\n入荷入力画面に戻ります。");
+                location.href = "./list.php";            
+            }
+        }
 	}
 --></script>
 </body>

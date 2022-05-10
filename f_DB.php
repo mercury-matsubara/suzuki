@@ -628,7 +628,20 @@ function makeList($sql,$post){
 	$listcount = 0;
 	$result = array();
 	$judge = false;
-	
+    
+	//画面IDを発行(出荷入力,入荷入力) 2022/04/01
+    if($filename == "SHUKANYURYOKU_5" || $filename == "SOKONYURYOKU_2")
+    {
+        $token = rtrim(base64_encode(openssl_random_pseudo_bytes(32)),'=');
+        $_SESSION["token"] = $token;
+        
+        if(isset($_SESSION["list"]["token"]))
+        {
+            unset($_SESSION["3CODE"][$_SESSION["list"]["token"]]);
+        }
+
+        $_SESSION["3CODE"][$token] = array();
+    }
 	//------------------------//
 	//          処理          //
 	//------------------------//
@@ -857,6 +870,12 @@ function makeList($sql,$post){
 			}
 		}
 		$list_html .= "</tr>";
+        
+        //明細情報を格納(出荷入力画面) 2022/04/01 
+        if($filename == "SHUKANYURYOKU_5")
+        {
+            $_SESSION["3CODE"][$token][($counter - 1)] = $result_row["3CODE"];
+        }
 		$counter++;
 	}
 	$list_html .="</tbody></table>";
@@ -877,6 +896,18 @@ function makeList($sql,$post){
 		}
 		$list_html .= "></td>";
 	}
+    
+    //入荷入力画面情報保持 2022/04/06
+    if($filename == "SOKONYURYOKU_2")
+    {
+        $select_sql = "SELECT NYUDATE,3CODE FROM nyukayoteiinfo;";
+        $result = $con->query($select_sql) or ($judge = true);	//mysql接続新				// クエリ発行
+
+        while($result_row = $result->fetch_array(MYSQLI_ASSOC)) //mysql接続新
+        {
+            $_SESSION["3CODE"][$token][$result_row["NYUDATE"]][] = $result_row["3CODE"];
+        }
+    }
 	return ($list_html);
 }
 
@@ -4169,7 +4200,7 @@ function nyukapul2($id){
 	$shudate = $result_row['SHUDATE'];*/
         //mysql接続新 2018/10/24
         $result = $con->query($sql);
-        $result_row = $result->fetch_array(MYSQLI_ASSOC);
+        //$result_row = $result->fetch_array(MYSQLI_ASSOC);
 	while($result_row = $result->fetch_array(MYSQLI_ASSOC))        
 	{
 		$shudate = $result_row['SHUDATE'];
@@ -4225,7 +4256,7 @@ function shukapul($id){
 	$shudate = $result_row['SHUDATE'];*/
         //mysql接続新 2018/10/24
         $result = $con->query($sql);               //mysql接続新 2018/10/24
-        $result_row = $result->fetch_array(MYSQLI_ASSOC);               //mysql接続新 2018/10/24
+        //$result_row = $result->fetch_array(MYSQLI_ASSOC);               //mysql接続新 2018/10/24
 	while($result_row = $result->fetch_array(MYSQLI_ASSOC))         //mysql接続新 2018/10/24
 	{
 		$shudate = $result_row['SHUDATE'];
@@ -4284,7 +4315,7 @@ function shukapul2($id){
 	$shudate = $result_row['SHUDATE'];*/
          //mysql接続新 2018/10/24
         $result = $con->query($sql);               //mysql接続新 2018/10/24
-        $result_row = $result->fetch_array(MYSQLI_ASSOC);               //mysql接続新 2018/10/24
+        //$result_row = $result->fetch_array(MYSQLI_ASSOC);               //mysql接続新 2018/10/24
 	while($result_row = $result->fetch_array(MYSQLI_ASSOC))         //mysql接続新 2018/10/24
 	{
 		$shudate = $result_row['SHUDATE'];
@@ -8946,5 +8977,127 @@ function judgeid($id)
 	}
 
 	return ($message);
+}
+
+function tab_check($filename,$token)
+{
+    //-------------------------------//
+	//            初期設定           //
+	//-------------------------------//
+	require_once("f_DB.php");
+	
+	//-------------------------------//
+	//              変数             //
+	//-------------------------------//
+    $tab_check = false;
+    $counter = 0;
+    $hin_list = array();      //品名保持配列  
+
+	//-------------------------------//
+	//              処理             //
+	//-------------------------------//
+    $con = dbconect();
+    
+    if($filename == "SHUKANYURYOKU_1")
+    {
+        $code6 = $_SESSION["insert"]["form_703_0"];
+        $sql = "SELECT * FROM shukayoteiinfo LEFT JOIN genbainfo ON (shukayoteiinfo.4CODE = genbainfo.4CODE) RIGHT JOIN shukameiinfo ON (shukayoteiinfo.6CODE = shukameiinfo.6CODE) LEFT JOIN soukoinfo ON (shukameiinfo.1CODE = soukoinfo.1CODE) LEFT JOIN eriainfo ON (shukameiinfo.2CODE = eriainfo.2CODE) LEFT JOIN hinmeiinfo ON (shukameiinfo.3CODE = hinmeiinfo.3CODE)  WHERE (shukayoteiinfo.6CODE = '".$code6."')  ORDER BY  7CODE  ASC   LIMIT 0,1000 ;";
+    }
+    elseif($filename == "SOKONYURYOKU_1")
+    {
+        //日付フォーマット変更(yyyy-mm-dd形式に変更)
+        $nyudate = $_SESSION["insert"]["form_505"];
+        $nyudate = date('Y', strtotime($nyudate))."-".date('m-d',  strtotime($nyudate));
+        $sql = 'SELECT *FROM nyukayoteiinfo where NYUDATE = "'.$nyudate.'";';        
+    }
+    
+    $result = $con->query($sql) or ($judge = true);
+
+    //品名を配列に格納する
+    while($result_row = $result->fetch_array(MYSQLI_ASSOC))
+    {
+        $hin_list[$counter] = $result_row["3CODE"];
+        $counter++;
+    }
+        
+    //エラーチェック
+    if($filename == "SHUKANYURYOKU_1")
+    {
+        if(count($hin_list) != count($_SESSION["3CODE"][$token]) || count(array_diff($hin_list, $_SESSION["3CODE"][$token])) != 0)
+        {
+            $tab_check = true;
+        }
+    }
+    elseif($filename == "SOKONYURYOKU_1")
+    {
+        //初期データに入荷日のデータがない場合
+        if(isset($_SESSION["3CODE"][$token][$nyudate]))
+        {
+            $before_list = $_SESSION["3CODE"][$token][$nyudate];
+            if(count($hin_list) != count($before_list) || count(array_diff($hin_list, $before_list)) != 0)
+            {
+                $tab_check = true;
+            }
+        }
+        else
+        {
+            if($result->num_rows != 0)
+            {    
+                $tab_check = true;
+            }
+        }        
+    }
+    return $tab_check;
+}
+
+function henpin_check($post)
+{
+    //-------------------------------//
+	//            初期設定           //
+	//-------------------------------//
+	require_once("f_DB.php");
+	
+	//-------------------------------//
+	//              変数             //
+	//-------------------------------//
+    $henpin_check = false;
+    $counter = 0;
+    $data = array();
+
+	//-------------------------------//
+	//              処理             //
+	//-------------------------------//
+    $con = dbconect();
+    $sql = "SELECT *FROM henpininfo WHERE HDATE ='".$post["form_henpin"]."' AND 4CODE = '".$post["4CODE"]."';";
+    $result = $con->query($sql) or ($judge = true);
+    while($result_row = $result->fetch_array(MYSQLI_ASSOC))
+    {
+        $data[$result_row["PRICODE"]][] = $result_row["3CODE"];
+    }
+    
+    //品名リスト作成
+    $str = $post['print'];
+    $str = rtrim($str,',');
+    $data_array = explode(',',$str);
+    $hin_list = array();
+    
+    for($i = 0; $i < count($data_array); $i = $i + 4)
+    {
+        $hin_list[] = $data_array[$i];
+    }
+    
+    //帳票Noごとに品名をチェックする        
+    $keys = array_keys($data);
+    for($i = 0; $i < count($data); $i++)
+    {
+        for($cnt = 0; $cnt < count($data[$keys[$i]]); $cnt++)
+        {            
+            if(count($hin_list) == count($data[$keys[$i]]) && count(array_diff($hin_list, $data[$keys[$i]])) === 0)
+            {
+                $henpin_check = true;
+            }
+        }
+    }
+    return $henpin_check;
 }
 ?>

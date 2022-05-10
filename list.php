@@ -426,6 +426,11 @@
 	{
 		echo '<input type="submit" name="serch" value = "表示" class="free" >';
 	}
+    //入荷入力情報保持 2022/04/05
+    if($filename == "SOKONYURYOKU_2")
+    {
+        echo "<input type='hidden' name='token' value='".$_SESSION["token"]."'>";
+    }
 	echo "</td></tr></table><br>";
 	
 /*	if($filename == 'HENKYAKUINFO_2' || $filename == 'SYUKKAINFO_2')
@@ -504,6 +509,11 @@
 			echo "<input type='hidden' name='year' value=''>";
 			echo "<input type='hidden' name='month' value=''>";
 			echo "<input type='hidden' name='day' value=''>";
+            //入荷入力情報保持 2022/04/05
+            if($filename == "SOKONYURYOKU_2")
+            {
+                echo "<input type='hidden' name='token' value='".$_SESSION["token"]."'>";
+            }
 			echo "<input type ='submit' value = '新規作成' class = 'free' name = '".$filename_insert."_button' onClick=' setValue(); '>";
 			echo "</td>";
 			echo "</form>";

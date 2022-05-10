@@ -12,34 +12,38 @@
 	require_once ("f_SQL.php");
 	$form_ini = parse_ini_file('./ini/form.ini', true);
 	
-	
+	$henpin_check = henpin_check($_SESSION["insert"]);
+    
 	$filename = $_SESSION['filename'];
 	$title = $form_ini[$filename]['title'];
 	$title .= "処理完了";
 	if($filename == 'HENPINNYURYOKU_5' || $filename == 'REHENPIN_5')
 	{	
-		$_SESSION['post'] = $_SESSION['pre_post'];
-		unset($_SESSION['pre_post']);
-		henpinyotei($_SESSION['insert']);
-//		henpinkakutei($_SESSION['list']);
-//		makeprintform($_SESSION['6CODE']);
-		echo "<table WIDTH=100%  id = 'print'><tr>";
-		echo "<form action='pageJump.php' method='post'>";
-		echo makebutton($filename,'top');
-		echo "</form>";
-		echo "</tr></table>";
-		echo "<div class = 'center'><br><br>";
-//		echo "<a class = 'title'>".$title."</a>";
-//		echo "</div>";
-//		echo "<div class = 'center'>";
-//		echo "<br>".$title."が完了いたしました。<br>";
-//		echo "</div>";
-//		echo "<form action='pageJump.php' method='post'>";
-//		echo "<div class = 'left' id = 'space_button'>　</div>";
-//		echo "<div><table id = 'button'><tr><td>";
-//		echo makebutton($filename,'center');
-//		echo "</td></tr></table></div>";
-//		echo "</form>";
+        if($henpin_check == false)
+        {
+            $_SESSION['post'] = $_SESSION['pre_post'];
+            unset($_SESSION['pre_post']);
+            henpinyotei($_SESSION['insert']);
+    //		henpinkakutei($_SESSION['list']);
+    //		makeprintform($_SESSION['6CODE']);
+            echo "<table WIDTH=100%  id = 'print'><tr>";
+            echo "<form action='pageJump.php' method='post'>";
+            echo makebutton($filename,'top');
+            echo "</form>";
+            echo "</tr></table>";
+            echo "<div class = 'center'><br><br>";
+    //		echo "<a class = 'title'>".$title."</a>";
+    //		echo "</div>";
+    //		echo "<div class = 'center'>";
+    //		echo "<br>".$title."が完了いたしました。<br>";
+    //		echo "</div>";
+    //		echo "<form action='pageJump.php' method='post'>";
+    //		echo "<div class = 'left' id = 'space_button'>　</div>";
+    //		echo "<div><table id = 'button'><tr><td>";
+    //		echo makebutton($filename,'center');
+    //		echo "</td></tr></table></div>";
+    //		echo "</form>";
+        }
 	}
 	else
 	{
@@ -269,57 +273,83 @@
 <body>
 <center>
 
+<?php
+    //返品指示書表示変更　2022/04/08
+    if($henpin_check == false)
+    {
+        //<!-- リスト部分一括テーブル -->
+        echo '<table id = "center">';
+        echo '<tr>';
+        echo "<td id = 'top'>";
+        //<!-- 検索条件ラジオボタン結果送信フォーム -->
+        echo '<form name="reset" action="List.php" method="post">';	
 
-	<!-- リスト部分一括テーブル -->
-	<table id = "center">
-	<tr>
-	<td id = 'top'>
-	<form name="reset" action="List.php" method="post">																			<!-- 検索条件ラジオボタン結果送信フォーム -->
-	
-	<!-- 検索条件ラジオボタン表示テーブル -->
-	<table id = "print">
-	<tr>
-	</tr>
-	</table>
-	<!-- 検索条件ラジオボタン表示テーブル終了 -->
-	
-	<!-- 更新・印刷ボタン表示テーブル -->
-	<table id = "print" style="width: 100%;">
-	<tr>
-	</form>																														<!-- 検索条件ラジオボタン結果送信フォーム終了 -->
-	
-	<!-- 20180705 ボタンの二度押しを禁止する start -->
-	<!--	<td><input type="button" value="印刷" style="WIDTH: 100px; HEIGHT: 40px" onClick="window.print()"></td> -->				<!-- 印刷ボタンhtml -->
-	<td><input type="button" value="印刷" style="WIDTH: 100px; HEIGHT: 40px" onClick="window.print();this.disabled = true;"></td>				<!-- 印刷ボタンhtml -->
-	<!-- 20180705 ボタンの二度押しを禁止する end   -->
-	<form action='listJump.php' method='post'>
-	<td style="width: 100px;"><input type="submit" name='back' value="閉じる" style="WIDTH: 100px; HEIGHT: 40px; align: right;"></td>				<!-- 閉じるボタンhtml -->
-	</form>
-	</tr>
-	</table>
-	<!-- 更新・印刷ボタン表示テーブル終了 -->
+        //<!-- 検索条件ラジオボタン表示テーブル -->
+        echo '<table id = "print">';
+        echo '<tr>';
+        echo '</tr>';
+        echo '</table>';
+        //<!-- 検索条件ラジオボタン表示テーブル終了 -->
 
+        //<!-- 更新・印刷ボタン表示テーブル -->
+        echo '<table id = "print" style="width: 100%;">';
+        echo '<tr>';
+        //<!-- 検索条件ラジオボタン結果送信フォーム終了 -->
+        echo '</form>';
 
-	<?php
+        //<!-- 20180705 ボタンの二度押しを禁止する start -->
+        //<!--	<td><input type="button" value="印刷" style="WIDTH: 100px; HEIGHT: 40px" onClick="window.print()"></td> -->				<!-- 印刷ボタンhtml -->
+        //<!-- 印刷ボタンhtml -->
+        echo '<td><input type="button" value="印刷" style="WIDTH: 100px; HEIGHT: 40px" onClick="window.print();this.disabled = true;"></td>';
+        //<!-- 20180705 ボタンの二度押しを禁止する end   -->
+        echo "<form action='listJump.php' method='post'>";
+        //<!-- 閉じるボタンhtml -->
+        echo '<td style="width: 100px;"><input type="submit" name="back" value="閉じる" style="WIDTH: 100px; HEIGHT: 40px; align: right;"></td>';
+        echo '</form>';
+        echo '</tr>';
+        echo '</table>';
+        //<!-- 更新・印刷ボタン表示テーブル終了 -->
+    }
+?>
+<?php
 	//----------------------------//
 	//     リストテーブル取得     //
 	//----------------------------//
-		require_once("f_DB.php");																					// ライブラリ読み込み //
-		$list_array = make_printlist2($_SESSION["PRICODE"]);															// リストテーブル取得関数(f_DB.php) //
-		$List_num = count($list_array);																				// リストテーブル数を取得 //
-		$List_count = 1;
-		
-		// リストテーブル数分ループ //
-		echo $list_array;
-		
-	?>
-	</td>
-	</tr>
-	</table>
-	<!-- リスト部分一括テーブル終了 -->
-	
-	
+    require_once("f_DB.php");																					// ライブラリ読み込み //
+    if($henpin_check == false)
+    {
+        $list_array = make_printlist2($_SESSION["PRICODE"]);															// リストテーブル取得関数(f_DB.php) //
+        $List_num = count($list_array);																				// リストテーブル数を取得 //
+        $List_count = 1;
+
+        // リストテーブル数分ループ //
+        echo $list_array;
+
+        echo '</td>';
+        echo '</tr>';
+        echo '</table>';
+        //<!-- リスト部分一括テーブル終了 -->
+    }
+    //エラー処理追加 2022/04/08
+	if($henpin_check)
+    {
+        $_SESSION['post'] = $_SESSION['pre_post'];
+        unset($_SESSION['pre_post']);
+        $_SESSION['pre_post'] = $_SESSION['post'];
+        $_SESSION['post'] = null;        
+    }
+?>	
 </center>
 
 </body>
+<script language="JavaScript"><!--
+	window.onload = function(){
+		var henpin_check = '<?php echo $henpin_check ?>';
+        if(henpin_check)
+        {
+            alert("日付、現場、品名が同じデータが登録されています。");
+            location.href = "./HENPINNYURYOKU.php";        
+        }
+	}
+--></script>
 </html>

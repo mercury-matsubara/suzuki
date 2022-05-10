@@ -23,7 +23,7 @@
 		$_SESSION['insert'] = $_SESSION['kari'];
 		unset($_SESSION['kari']);
 	}
-
+    
 /*	if(isset($_SESSION['list']['limit']) == false)
 	{
 		$_SESSION['list']['limitstart'] = 0 ;
@@ -62,6 +62,49 @@
 	$soukopulp = soukopul();
 	$eriapulp = eriapul();
 	$soukolist = soukoget();
+    
+    //初期情報取得処理追加(2022-04-12)
+    if(isset($_SESSION["token"]))
+    {
+        $token = $_SESSION["token"];
+        unset($_SESSION["token"]);            
+    }
+    else
+    {
+        $token = $_SESSION["pre_post"]["token"]; 
+    }
+    if(isset($_SESSION["code6"]))
+    {
+        $_SESSION["6CODE"] = $_SESSION["code6"];
+        unset($_SESSION["code6"]);
+    }
+    
+    if(!isset($_SESSION["3CODE"][$token]))
+    {
+        $_SESSION["3CODE"][$token] = array();
+        if($filename == "SOKONYURYOKU_1")
+        {
+            $select_sql = "SELECT NYUDATE,3CODE FROM nyukayoteiinfo;";
+            $result = $con->query($select_sql) or ($judge = true);	//mysql接続新				// クエリ発行
+
+            while($result_row = $result->fetch_array(MYSQLI_ASSOC)) //mysql接続新
+            {
+                $_SESSION["3CODE"][$token][$result_row["NYUDATE"]][] = $result_row["3CODE"];
+            }                
+        }
+        elseif($filename == "SHUKANYURYOKU_1")
+        {
+            $code6 = $_SESSION['6CODE'];
+            $select_sql = "SELECT * FROM shukayoteiinfo LEFT JOIN genbainfo ON (shukayoteiinfo.4CODE = genbainfo.4CODE) RIGHT JOIN shukameiinfo ON (shukayoteiinfo.6CODE = shukameiinfo.6CODE) LEFT JOIN soukoinfo ON (shukameiinfo.1CODE = soukoinfo.1CODE) LEFT JOIN eriainfo ON (shukameiinfo.2CODE = eriainfo.2CODE) LEFT JOIN hinmeiinfo ON (shukameiinfo.3CODE = hinmeiinfo.3CODE)  WHERE (shukayoteiinfo.6CODE = '".$code6."')  ORDER BY  7CODE  ASC   LIMIT 0,1000 ;";                    
+            $result = $con->query($select_sql) or ($judge = true);	//mysql接続新				// クエリ発行
+            $counter = 0;
+            while($result_row = $result->fetch_array(MYSQLI_ASSOC))
+            {
+                $_SESSION["3CODE"][$token][$counter] = $result_row["3CODE"];
+                $counter++;
+            }
+        }
+    }
         if(isset($_SESSION['6CODE']))   //2018/10/24 追加
         {
             if($_SESSION['6CODE'] != "")
@@ -107,6 +150,7 @@
         {
             $pripul = "";
         }
+        
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C/DTD HTML 4.01">
@@ -1000,6 +1044,10 @@ function inputcheck(name,size,type,isnotnull){
 	$notnulltype = $_SESSION['notnulltype'];
 	echo "<body><table class='top' WIDTH=100%><tr><td class='left' width=130px><form action='insertJump.php' method='post'>";
 	echo "<input type ='submit' value = '戻る' name = 'back' class = 'free'>";
+    if(isset($_SESSION['6CODE']))
+    {
+        echo "<input type = 'hidden' name = 'form_703_0' value = '".$_SESSION["6CODE"]."'>";
+    }
 	echo "</form></td>";
 
 //	echo "<form action='pageJump.php' method='post'>";
@@ -1039,6 +1087,11 @@ function inputcheck(name,size,type,isnotnull){
 	echo $form;
 	echo '<input type ="hidden" name = "form_305_1" id = "form_305_1"  class = "" value = "" size = "30" >';
 	echo "<div class = 'center'>";
+    if($filename == 'SHUKANYURYOKU_1' || $filename == "SOKONYURYOKU_1")
+    {
+        echo '<input type="hidden" name="token" value="'.$token.'">';
+        echo '<input type="hidden" name="filename" value="'.$filename.'">';
+    }
 	if($filename == 'SHUKANYURYOKU_1' || $filename='RESHUKA_1')
 	{
 		echo '<input type="submit" name = "insert" value = "登録" class="free" onClick ="getValue();">';
